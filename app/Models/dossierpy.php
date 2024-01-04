@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class dossierpy extends Model
+{
+    use HasFactory;
+    protected $fillable = [
+        'dossierpy_id',
+        'dossier_id',
+        'CIN',
+        'Bac',
+        'diplome',
+        'relevé_ann1',
+        'relevé_ann2',
+        
+       
+      
+    ];
+    public function dossier(){
+        return $this->belongsTo(dossier::class);
+    }
+}

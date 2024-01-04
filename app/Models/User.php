@@ -52,4 +52,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
+    public function menus(){
+        return $this->hasMany(menu::class);
+    }
+
+    public function candidat(){
+        return $this->hasOne(Candidat::class);
+    }
+    public function cordinateur(){
+        return $this->hasOne(cordinateur::class);
+    }
 }
