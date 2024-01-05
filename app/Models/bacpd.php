@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class bacpd extends Model
 {
     use HasFactory;
+    protected $table = 'bacpd';
     protected $fillable = [
         'bacpd_id',
         'typebpd_id',

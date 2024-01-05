@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class inscription extends Model
 {
     use HasFactory;
+    protected $table = 'inscription';
     protected $fillable = [
         'inscription_id',
         'licence_id',

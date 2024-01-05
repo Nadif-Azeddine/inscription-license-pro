@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class licence extends Model
 {
     use HasFactory;
+    protected $table = 'licence';
     protected $fillable = [
         'licence_id',
         'departement_id',

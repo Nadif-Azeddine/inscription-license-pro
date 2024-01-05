@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class dossier extends Model
 {
     use HasFactory;
+    protected $table = 'dossier';
     protected $fillable = [
         'dossier_id',
         'candidature_id',

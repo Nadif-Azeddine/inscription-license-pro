@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class bacoption extends Model
 {
     use HasFactory;
+    protected $table = 'bacoption';
     protected $fillable = [
         'bacoption_id',
         'option',

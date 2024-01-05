@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class dossierpy extends Model
 {
     use HasFactory;
+    protected $table = 'dossierpy';
     protected $fillable = [
         'dossierpy_id',
         'dossier_id',

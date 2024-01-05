@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class typebpd extends Model
 {
     use HasFactory;
+    protected $table = 'typebpd';
     protected $fillable = [
         'typebpd_id',
         'specialite_id',

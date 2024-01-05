@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class dossier_nu extends Model
 {
     use HasFactory;
+    protected $table = 'dossier_nu';
     protected $fillable = [
         'dossier_nu_id',
         'dossier_id',
