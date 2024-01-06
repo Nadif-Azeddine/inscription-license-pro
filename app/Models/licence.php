@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class licence extends Model
+class Licence extends Model
 {
     use HasFactory;
     protected $table = 'licence';
@@ -18,16 +18,16 @@ class licence extends Model
         'order',
     
     ];
-    public function inscription(){
-        return $this->hasMany(inscription::class);
+    public function inscriptions(){
+        return $this->hasMany(Inscription::class);
     }
     public function departement(){
-        return $this->belongsTo(departement::class);
+        return $this->belongsTo(Departement::class);
     }
     public function specialite(){
-        return $this->hasOne(specialite::class);
+        return $this->hasOne(Specialite::class);
     }
     public function anneun(){
-        return $this->belongsTo(anneun::class);
+        return $this->belongsTo(Anneun::class);
     }
 }

@@ -10,31 +10,28 @@ class Candidat extends Model
     use HasFactory;
     protected $table = 'Candidat';
     protected $fillable = [
-        'candidat_id',
         'user_id',
         'ville_id',
         'etablissement_id',
-        'Nom',
-        'Prenom',
-        'Adresse',
-        'Date_Naiss',
-        'Num_tel',
-        'Email',
+        'adresse',
+        'Date_naissance',
+        'num_tel',
+        'email',
         'CIN',
         'CNE',
-        'Num_Apoge',
+        'num_apoge',
     ];
     public function user(){
         return $this->belongsTo(User::class);
     }
     public function ville(){
-        return $this->belongsTo(ville::class);
+        return $this->belongsTo(Ville::class, "ville_id");
     }
 
     public function etablissement(){
-        return $this->belongsTo(etablissement::class);
+        return $this->belongsTo(Etablissement::class, "etablissement_id");
     }
-    public function condidture(){
-        return $this->hasOne(candidature::class);
+    public function candidature(){
+        return $this->hasOne(Candidature::class);
     }
 }

@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
-
-        Schema::create('dossier', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('candidature_id');
+            $table->string('name')->unique();
+            $table->string('display_name');
+            $table->string('description')->nullable();
             $table->timestamps();
-            $table->foreign('candidature_id')->references('id')->on('candidature')->onDelete('cascade');
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -28,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dossier');
+        Schema::dropIfExists('roles');
     }
 };

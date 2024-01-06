@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('inscription', function (Blueprint $table) {
             $table->id();
-            $table->integer('licence_id');
-            $table->integer('anneun_id');
-            $table->integer('candidature_id');
+            $table->unsignedBigInteger('licence_id');
+            $table->unsignedBigInteger('anneun_id');
+            $table->unsignedBigInteger('candidature_id');
             $table->timestamps();
             $table->foreign('licence_id')->references('id')->on('licence')->onDelete('cascade');
             $table->foreign('candidature_id')->references('id')->on('candidature')->onDelete('cascade');
             $table->foreign('anneun_id')->references('id')->on('anneun')->onDelete('cascade');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

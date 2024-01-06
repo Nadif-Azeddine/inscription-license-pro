@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class candidature extends Model
+class Candidature extends Model
 {
     use HasFactory;
     protected $table = 'candidature';
@@ -18,15 +18,15 @@ class candidature extends Model
     ];
 
     public function condiate(){
-        return $this->belongsTo(Candidat::class);
+        return $this->belongsTo(Candidat::class, 'candidat_id');
     }
     public function diplome(){
-        return $this->hasOne(diplome::class);
+        return $this->hasOne(diplome::class, 'diplome_id');
     }
     public function dossier(){
         return $this->hasOne(dossier::class);
     }
     public function inscription(){
-        return $this->hasMany(inscription::class);
+        return $this->hasMany(Inscription::class);
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class specialite extends Model
+class Specialite extends Model
 {
     use HasFactory;
     protected $table = 'specialite';
@@ -15,9 +15,9 @@ class specialite extends Model
         
     ];
     public function licence(){
-        return $this->hasMany(licence::class);
+        return $this->hasMany(Licence::class);
     }
     public function typebpd(){
-        return $this->belongsToMany(typebpd::class);
+        return $this->belongsToMany(TypeBpd::class);
     }
 }

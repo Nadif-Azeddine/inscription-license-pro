@@ -5,24 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class dossier extends Model
+class Dossier extends Model
 {
     use HasFactory;
     protected $table = 'dossier';
     protected $fillable = [
-        'dossier_id',
         'candidature_id',
         
        
       
     ];
     public function dossier_nu(){
-        return $this->hasOne(dossier_nu::class);
+        return $this->hasOne(DossierNu::class);
     }
     public function dossierpy(){
-        return $this->hasOne(dossierpy::class);
+        return $this->hasOne(DossierPy::class);
     }
     public function candidature(){
-        return $this->belongsTo(candidature::class);
+        return $this->belongsTo(Candidature::class);
     }
 }

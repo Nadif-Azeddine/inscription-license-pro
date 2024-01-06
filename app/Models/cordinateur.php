@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class cordinateur extends Model
+class Cordinateur extends Model
 {
     use HasFactory;
     protected $table = 'cordinateur';
     protected $fillable = [
-        'cordinateur_id',
         'departement_id',
-        'users_id',
+        'user_id',
         'nom',
         'prenom',
         'Date_Naiss',
@@ -20,7 +19,7 @@ class cordinateur extends Model
       
     ];
     public function departement(){
-        return $this->belongsTo(departement::class);
+        return $this->belongsTo(Departement::class);
     }
     public function user(){
         return $this->belongsTo(User::class);

@@ -11,6 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('langue', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('menu_id');
@@ -21,6 +23,8 @@ return new class extends Migration
             $table->unique([ 'key']);
             $table->foreign('menu_id')->references('id')->on('menu')->onDelete('cascade');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

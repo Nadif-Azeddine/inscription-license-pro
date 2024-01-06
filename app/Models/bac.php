@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class bac extends Model
+class Bac extends Model
 {
     use HasFactory;
     protected $table = 'bac';
     protected $fillable = [
-        'bac_id',
         'option_id',
         'Moy_national',
         'Moy_regional',
@@ -20,7 +19,7 @@ class bac extends Model
     ];
 
     public function option(){
-        return $this->hasOne(bacoption::class);
+        return $this->hasOne(BacOption::class);
     }
     public function diplome(){
         return $this->belongsTo(diplome::class);

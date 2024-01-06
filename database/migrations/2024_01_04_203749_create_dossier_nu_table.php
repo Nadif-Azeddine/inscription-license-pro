@@ -11,17 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('dossier_nu', function (Blueprint $table) {
             $table->id();
-            $table->integer('dossier_id');
+            $table->unsignedBigInteger('dossier_id');
             $table->string('CIN'); 
-            $table->string('Bac'); 
+            $table->string('bac'); 
             $table->string('diplome'); 
             $table->string('relevé_ann1'); 
             $table->string('relevé_ann2'); 
             $table->timestamps();
             $table->foreign('dossier_id')->references('id')->on('dossier')->onDelete('cascade');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

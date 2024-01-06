@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
         Schema::create('candidature', function (Blueprint $table) {
             $table->id();
-            $table->integer('Candidat_id');
-            $table->integer('diplome_id');
+            $table->unsignedBigInteger('Candidat_id');
+            $table->unsignedBigInteger('diplome_id');
             $table->string('etat');
             $table->timestamps();
             $table->foreign('Candidat_id')->references('id')->on('Candidat')->onDelete('cascade');
             $table->foreign('diplome_id')->references('id')->on('diplome')->onDelete('cascade');
         });
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

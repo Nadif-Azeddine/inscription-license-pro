@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class inscription extends Model
+class Inscription extends Model
 {
     use HasFactory;
     protected $table = 'inscription';
@@ -16,12 +16,12 @@ class inscription extends Model
         'candidature_id',
     ];
     public function licence_id(){
-        return $this->belongsTo(licence::class);
+        return $this->belongsTo(Licence::class);
     }
     public function anneun(){
-        return $this->belongsTo(anneun::class);
+        return $this->belongsTo(Anneun::class);
     }
     public function candidature(){
-        return $this->belongsTo(candidature::class);
+        return $this->belongsTo(Candidature::class);
     }
 }

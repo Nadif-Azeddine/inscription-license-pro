@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('bac', function (Blueprint $table) {
             $table->id();
-            $table->integer('option_id');
+            $table->unsignedBigInteger('option_id');
             $table->string('Moy_national');
             $table->string('Moy_regional');
             $table->string('Moy_general');
@@ -22,6 +24,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('option_id')->references('id')->on('option')->onDelete('cascade');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

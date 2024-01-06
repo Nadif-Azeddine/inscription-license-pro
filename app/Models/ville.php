@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ville extends Model
+class Ville extends Model
 {
     use HasFactory;
     protected $table = 'ville';
@@ -16,13 +16,13 @@ class ville extends Model
     
       
     ];
-    public function Candidat(){
-        return $this->belongsToMany(Candidat::class);
+    public function Candidats(){
+        return $this->hasMany(Candidat::class, 'ville_id');
     }
-    public function etablissement(){
-        return $this->hasMany(etablissement::class);
+    public function etablissements(){
+        return $this->hasMany(Etablissement::class);
     }
     public function region(){
-        return $this->belongsTo(region::class);
+        return $this->belongsTo(Region::class);
     }
 }

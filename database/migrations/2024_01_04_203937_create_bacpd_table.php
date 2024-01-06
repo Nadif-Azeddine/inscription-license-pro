@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('bacpd', function (Blueprint $table) {
             $table->id();
-            $table->integer('typebpd_id');
+            $table->unsignedBigInteger('typebpd_id');
             $table->string('Moy_s1');
             $table->string('Moy_s2');
             $table->string('Moy_s3');
@@ -23,6 +25,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('typebpd_id')->references('id')->on('typebpd')->onDelete('cascade');
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**

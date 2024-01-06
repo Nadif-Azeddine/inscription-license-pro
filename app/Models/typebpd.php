@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class typebpd extends Model
+class TypeBpd extends Model
 {
     use HasFactory;
     protected $table = 'typebpd';
@@ -16,9 +16,9 @@ class typebpd extends Model
     ];
 
     public function bacpd(){
-        return $this->belongsToMany(bacpd::class);
+        return $this->belongsToMany(BacPd::class);
     }
     public function specialite(){
-        return $this->hasOne(specialite::class);
+        return $this->hasOne(Specialite::class);
     }
 }

@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class langue extends Model
+class Langue extends Model
 {
     use HasFactory;
     protected $table = 'langue';
     protected $fillable = [
-        'langue_id',
         'menu_id',
         'name',
         'key',
         'translation',
     ];
     public function menu(){
-        return $this->belongsTo(menu::class);
+        return $this->belongsTo(Menu::class);
     }
 }

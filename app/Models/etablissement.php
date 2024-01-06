@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class etablissement extends Model
+class Etablissement extends Model
 {
     use HasFactory;
     protected $table = 'etablissement';
@@ -16,8 +16,8 @@ class etablissement extends Model
        
       
     ];
-    public function Candidat(){
-        return $this->belongsToMany(Candidat::class);
+    public function candidat(){
+        return $this->hasMany(Candidat::class);
     }
     public function departement(){
         return $this->hasMany(departement::class);

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class dossierpy extends Model
+class DossierPy extends Model
 {
     use HasFactory;
     protected $table = 'dossierpy';
