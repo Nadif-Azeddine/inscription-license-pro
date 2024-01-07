@@ -11,7 +11,6 @@ class BacOption extends Model
     protected $table = 'bacoption';
     protected $fillable = [
         'option', 
-      
     ];
     public function option(){
         return $this->belongsToMany(Bac::class);

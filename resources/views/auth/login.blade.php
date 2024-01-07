@@ -30,7 +30,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-4">
                                 <label for="password" class=" col-form-label">{{ __('Password') }}</label>
 
                                 <div class="col-12">
@@ -46,8 +46,8 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mb-0 text-center">
-                                <button type="submit" class="btn btn-primary col-12">
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary rounded-pill col-12">
                                     {{ __('Envoyer') }}
                                 </button>
 

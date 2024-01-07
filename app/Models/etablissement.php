@@ -10,22 +10,21 @@ class Etablissement extends Model
     use HasFactory;
     protected $table = 'etablissement';
     protected $fillable = [
-        'etablissement_id',
         'ville_id',
         'nom_etablissement',
        
       
     ];
-    public function candidat(){
-        return $this->hasMany(Candidat::class);
+    public function candidats(){
+        return $this->hasMany(Candidat::class, 'etablissement_id');
     }
-    public function departement(){
-        return $this->hasMany(departement::class);
+    public function departements(){
+        return $this->hasMany(Departement::class);
     }
-    public function diplome(){
-        return $this->hasMany(diplome::class);
+    public function diplomes(){
+        return $this->belongsToMany(Diplome::class);
     }
     public function ville(){
-        return $this->belongsTo(ville::class);
+        return $this->belongsTo(Ville::class);
     }
 }

@@ -14,12 +14,19 @@ return new class extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::create('candidature', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('Candidat_id');
-            $table->unsignedBigInteger('diplome_id');
+            $table->unsignedBigInteger('candidat_id');
+            $table->unsignedBigInteger('bac_id');
+            $table->unsignedBigInteger('bacpd_id');
+            $table->unsignedBigInteger('license_id');
+            $table->unsignedBigInteger('anneeun_id');
             $table->string('etat');
             $table->timestamps();
-            $table->foreign('Candidat_id')->references('id')->on('Candidat')->onDelete('cascade');
-            $table->foreign('diplome_id')->references('id')->on('diplome')->onDelete('cascade');
+            $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
+            $table->foreign('bac_id')->references('id')->on('bac')->onDelete('cascade');
+            $table->foreign('bacpd_id')->references('id')->on('bacpd')->onDelete('cascade');
+            $table->foreign('license_id')->references('id')->on('license')->onDelete('cascade');
+            $table->foreign('anneeun_id')->references('id')->on('anneeun')->onDelete('cascade');
+        
         });
         Schema::enableForeignKeyConstraints();
     }

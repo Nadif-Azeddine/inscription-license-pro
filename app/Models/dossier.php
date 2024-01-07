@@ -10,10 +10,7 @@ class Dossier extends Model
     use HasFactory;
     protected $table = 'dossier';
     protected $fillable = [
-        'candidature_id',
-        
-       
-      
+        'candidature_id', 
     ];
     public function dossier_nu(){
         return $this->hasOne(DossierNu::class);

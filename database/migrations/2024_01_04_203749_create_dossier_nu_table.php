@@ -16,16 +16,15 @@ return new class extends Migration
         Schema::create('dossier_nu', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dossier_id');
-            $table->string('CIN'); 
-            $table->string('bac'); 
-            $table->string('diplome'); 
-            $table->string('relevé_ann1'); 
-            $table->string('relevé_ann2'); 
+            $table->boolean('CIN'); 
+            $table->boolean('bac'); 
+            $table->boolean('diplome'); 
+            $table->boolean('relevé_ann1'); 
+            $table->boolean('relevé_ann2'); 
             $table->timestamps();
             $table->foreign('dossier_id')->references('id')->on('dossier')->onDelete('cascade');
         });
-
-        Schema::enableForeignKeyConstraints();
+        
     }
 
     /**

@@ -13,17 +13,15 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('licence', function (Blueprint $table) {
+        Schema::create('license', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('departement_id');
             $table->unsignedBigInteger('specialite_id');
             $table->string('nom_licence');
-            $table->unsignedBigInteger('anneun_id');
             $table->string('order');
             $table->timestamps();
             $table->foreign('departement_id')->references('id')->on('departement')->onDelete('cascade');
             $table->foreign('specialite_id')->references('id')->on('specialite')->onDelete('cascade');
-            $table->foreign('anneun_id')->references('id')->on('anneun')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();

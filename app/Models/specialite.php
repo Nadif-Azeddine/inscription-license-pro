@@ -10,7 +10,6 @@ class Specialite extends Model
     use HasFactory;
     protected $table = 'specialite';
     protected $fillable = [
-        'specialite_id',
         'libelle',
         
     ];

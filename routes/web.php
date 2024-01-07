@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\inscription\CandidatController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,10 +23,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware'=>'auth'],function(){
-    Route::get('/dashboard', function () {
-        return view('welcome');
-    })->name('dashboard');
+// inscription
+Route::group(['prefix' => '/inscription', 'middleware' => ['auth']], function () {
+    Route::get('/candidat', [CandidatController::class, 'index'])->name('candidat');
+    Route::post('/candidat', [CandidatController::class, 'save'])->name('save_candidat');
+
+    Route::get('/bac', [CandidatController::class, 'bac'])->middleware('is_candidat')->name('bac');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

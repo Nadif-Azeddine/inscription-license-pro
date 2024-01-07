@@ -10,9 +10,8 @@ class Ville extends Model
     use HasFactory;
     protected $table = 'ville';
     protected $fillable = [
-        'ville_id',
-        'region_id',
         'nom_ville',
+        'region_id',
     
       
     ];
@@ -20,9 +19,9 @@ class Ville extends Model
         return $this->hasMany(Candidat::class, 'ville_id');
     }
     public function etablissements(){
-        return $this->hasMany(Etablissement::class);
+        return $this->hasMany(Etablissement::class, 'ville_id');
     }
     public function region(){
-        return $this->belongsTo(Region::class);
+        return $this->belongsTo(Region::class, 'region_id');
     }
 }

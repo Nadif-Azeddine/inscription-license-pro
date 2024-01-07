@@ -34,7 +34,7 @@
                 </a>
 
                 <div class="d-flex align-items-center ">
-                    <div class="dropdown">
+                    <div class="dropdown" style="">
                         <button class="" type="button" id="triggerId" data-bs-toggle="dropdown"> <i
                                 class="fa-solid fa-earth-africa fs-5 mt-2"></i> </button>
                         <div class="dropdown-menu shadow-sm end-0" style="left: unset" aria-labelledby="triggerId">
@@ -42,11 +42,9 @@
                                 <li class="dropdown-item col-12"><i class="fa fa-language me-2"
                                         aria-hidden="true"></i>English</li>
                                 <li class="dropdown-item col-12"><i class="fa fa-language me-2"
-                                        aria-hidden="true"></i>English</li>
+                                        aria-hidden="true"></i>French</li>
                                 <li class="dropdown-item col-12"><i class="fa fa-language me-2"
-                                        aria-hidden="true"></i>English</li>
-                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
-                                        aria-hidden="true"></i>English</li>
+                                        aria-hidden="true"></i>Arabic</li>
                             </ul>
                         </div>
                     </div>
@@ -63,11 +61,11 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
 </body>
-@yield('script')
+@yield('scripts')
 
 </html>

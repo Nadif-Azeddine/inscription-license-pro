@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('bac', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('option_id');
-            $table->string('Moy_national');
-            $table->string('Moy_regional');
-            $table->string('Moy_general');
-            $table->date('Date_obt');
-            $table->string('Mention');
+            $table->unsignedBigInteger('candidat_id');
+            $table->string('moy_general');
+            $table->date('date_obt');
+            $table->string('mention');
             $table->timestamps();
             $table->foreign('option_id')->references('id')->on('option')->onDelete('cascade');
+            $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();

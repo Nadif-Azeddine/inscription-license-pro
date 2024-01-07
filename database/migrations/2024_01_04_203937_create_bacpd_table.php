@@ -15,15 +15,23 @@ return new class extends Migration
 
         Schema::create('bacpd', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('typebpd_id');
-            $table->string('Moy_s1');
-            $table->string('Moy_s2');
-            $table->string('Moy_s3');
-            $table->string('Moy_s4');
-            $table->date('Date_obt');
-            $table->string('Mention');
+            $table->unsignedBigInteger('candidat_id');
+            $table->unsignedBigInteger('diplome_id');
+            $table->unsignedBigInteger('specialite_id');
+            $table->float('moy_pa');
+            $table->float('moy_da');
+            $table->integer('nb_etudiant_pa');
+            $table->integer('classment_pa');
+            $table->integer('nb_etudiant_da');
+            $table->integer('classment_da');
+            $table->date('date_reussite_pa');
+            $table->date('date_reussite_da');
+            $table->date('date_obt');
+            $table->string('mention');
             $table->timestamps();
-            $table->foreign('typebpd_id')->references('id')->on('typebpd')->onDelete('cascade');
+            $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
+            $table->foreign('diplome_id')->references('id')->on('diplome')->onDelete('cascade');
+            $table->foreign('specialite_id')->references('id')->on('specialite')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();

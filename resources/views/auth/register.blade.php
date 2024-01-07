@@ -1,36 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container py-4 pb-4 px-4">
         <div class="row justify-content-center">
-            <div class="col-12 position-relative rounded-pill" style="height: 7px; background: var(--muted)">
-                <div class="postion-absolute start-0 col-12 top-0 d-flex  justify-content-between align-items-center"
-                    style="height: 7px">
-                    <div class="circle shadow" style="scale: 1.3">1</div>
-                    <div class="circle">2</div>
-                    <div class="circle">3</div>
-                    <div class="circle">4</div>
-                </div>
-            </div>
 
-            <div class="col-md-10 mt-4">
-                <div class="">
-                    <div class="col-12 text-center mt-3">
-                        <h3 class="fw-meduim">{{ __('Inscription a LP 2024') }}</h3>
-                        <span class="muted">{{ 'Etape 1: Informations generale' }}</span>
+            @include('partials.progress')
+            
+            <div class="col-md-8 mb-3 mt-2">
+                <div class="px-4 py-3 pb-5">
+                    <div class="col-12 mb-3 text-center d-flex flex-column justify-content-center align-items-center">
+                        <span style="font-size: 3em;"><i class="fa text-primary fa-user" aria-hidden="true"></i></span>
                     </div>
-                    <hr>
-                    <div class=" d-flex flex-column justify-content-center align-items-center  ">
-                        <form method="POST" class="col-11 col-sm-8" action="{{ route('register') }}">
+                    <div class="d-flex blury-card flex-column justify-content-center align-items-center  ">
+                        <form method="POST" class="col-12" action="{{ route('register') }}">
                             @csrf
                             <div class="row mb-3">
                                 <div class="col-6">
                                     <label for="nom" class="col-form-label ">{{ __('Nom') }}</label>
 
                                     <div class="col-12">
-                                        <input id="nom" type="text"
+                                        <input id="nom" type="text" value="{{ Auth::user()->nom ?? old('nom') }}"
                                             class="form-control @error('nom') is-invalid @enderror" name="nom"
-                                            value="{{ old('nom') }}" required placeholder="Entrer votre nom" autofocus>
+                                          required placeholder="Entrer votre nom" autofocus>
 
                                         @error('nom')
                                             <span class="invalid-feedback" role="alert">
@@ -44,9 +35,9 @@
                                     <label for="prenom" class="col-form-label ">{{ __('Prenom') }}</label>
 
                                     <div class="col-12">
-                                        <input id="prenom" type="text"
+                                        <input id="prenom" type="text" value="{{ Auth::user()->prenom ?? old('prenom') }}"
                                             class="form-control @error('prenom') is-invalid @enderror" name="prenom"
-                                            value="{{ old('prenom') }}" required placeholder="Entrer votre prenom"
+                                             required placeholder="Entrer votre prenom"
                                             autofocus>
 
                                         @error('prenom')
@@ -58,13 +49,14 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-7">
+                                <div class="col-6">
                                     <label for="date_naissance" class="col-form-label ">{{ __('Date Naissance') }}</label>
 
                                     <div class="col-12">
                                         <input id="date_naissance" type="date"
-                                            class="form-control @error('date_naissance') is-invalid @enderror" name="date_naissance"
-                                            value="{{ old('date_naissance') }}" required autofocus>
+                                            value="{{ Auth::user()->date_naissance ?? old('date_naissance') }}"
+                                            class="form-control @error('date_naissance') is-invalid @enderror"
+                                            name="date_naissance"  required autofocus>
 
                                         @error('date_naissance')
                                             <span class="invalid-feedback" role="alert">
@@ -74,55 +66,30 @@
                                     </div>
                                 </div>
 
-                                <div class="col-4">
-                                    <label class="col-form-label ">{{ __('Sexe') }}</label>
-
-                                    <div class="d-flex gap-3">
-                                        <div class="mt-2">
-                                            <input class="form-check-input" type="radio" name="sexe" value="H"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                {{ __('Homme') }}
-                                            </label>
-                                        </div>
-                                        <div class="mt-2">
-                                            <input class="form-check-input" type="radio" name="sexe" value="F"
-                                                id="flexRadioDefault2" checked>
-                                            <label class="form-check-label" for="">
-                                                {{ __('Femme') }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="email" class="col-form-label ">{{ __('Email Address') }}</label>
-
-                                <div class="col-12">
-                                    <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email" placeholder="example@example.com" autofocus>
-
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-
                                 <div class="col-6">
-                                    <label for="password" class=" col-form-label">{{ __('Password') }}</label>
+                                    <label class="col-form-label">{{ __('Sexe') }}</label>
+                                    <select class="form-select" name="sexe">
+                                        <option class="text-muted">{{ __('Sexe') }}</option>
+                                        <option value="H"
+                                            {{ Auth::user() != null && Auth::user()->genre === 'H' ? 'selected' : '' }}>
+                                            {{ __('Homme') }}</option>
+                                        <option value="F"
+                                            {{ Auth::user() != null && Auth::user()->genre === 'F' ? 'selected' : '' }}>
+                                            {{ __('Femme') }}</option>
+                                    </select>
+                                </div>
+                            </div>
 
+                            <div class="mb-3 row">
+                                <div class="col-6">
+                                    <label for="email" class="col-form-label ">{{ __('Email Address') }}</label>
                                     <div class="col-12">
-                                        <input id="password" type="password" placeholder="Entrer votre mot de passe"
-                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                            required autocomplete="current-password">
+                                        <input id="email" type="email" value="{{ Auth::user()->email ?? old('email') }}"
+                                            class="form-control @error('email') is-invalid @enderror" name="email"
+                                             required autocomplete="email"
+                                            placeholder="example@example.com" autofocus>
 
-                                        @error('password')
+                                        @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -131,14 +98,14 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <label for="password_confirmation"
-                                        class=" col-form-label">{{ __('Confirm password') }}</label>
+                                    <label for="tel" class="col-form-label ">{{ __('Telephone') }}</label>
                                     <div class="col-12">
-                                        <input id="password" type="password" placeholder="Confirmer votre mot de passe"
-                                            class="form-control @error('password_confirmation') is-invalid @enderror"
-                                            name="password_confirmation" required>
+                                        <input id="tel" type="tel" value="{{ Auth::user()->tel ?? old('tel') }}"
+                                            class="form-control @error('tel') is-invalid @enderror" name="tel"
+                                             required autocomplete="tel"
+                                            placeholder="+212666666666" autofocus>
 
-                                        @error('password_confirmation')
+                                        @error('tel')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -146,14 +113,82 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 mt-2">
-                                <button type="submit" class="btn btn-primary col-12">
+
+                            @guest
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="password" class=" col-form-label">{{ __('Password') }}</label>
+
+                                        <div class="col-12">
+                                            <input id="password" value="{{ Auth::user()->password ?? '' }}" type="password"
+                                                placeholder="Entrer votre mot de passe"
+                                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                                autocomplete="current-password">
+
+                                            @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <label for="password_confirmation"
+                                            class=" col-form-label">{{ __('Confirm password') }}</label>
+                                        <div class="col-12">
+                                            <input id="password" type="password" placeholder="Confirmer votre mot de passe"
+                                                class="form-control @error('password_confirmation') is-invalid @enderror"
+                                                name="password_confirmation">
+
+                                            @error('password_confirmation')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                            @endguest
+
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn rounded-pill py-3 btn-primary col-12">
                                     {{ __('Envoyer') }}
                                 </button>
                             </div>
                         </form>
                     </div>
+                    @error('email')
+                    <div class="modal fade show" id="modelerror" style="display: block; background: #4a4a4a65"
+                        tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered max-w-sm-100 w-px-400" role="document">
+                            <div class="modal-content py-4 text-center shadow-lg" style="border-radius: 20px; border: 0px solid black">
+                                <div class="position-relative mb-2 text-center" style="z-index: 10">
+                                    <button onclick="closeModal()" data-bs-dismiss="modal"
+                                        class=" position-absolute end-0 top-0 py-2 px-3 rounded-circle text-white "><span><i class="fa fa-x" aria-hidden="true"></i></span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-4">
+                                        <h2 class="modal-title fw-bold">ERROR</h2>
+                                        <p class="text-danger">it seems that you already create an account, try to continue inscription instead</p>
+                                    </div>
+                                    <div class="row justify-content-around">
+                                        <a href="{{ route('login') }}"
+                                            class="btn btn-success rounded-pill col-8 text-white ">Continue Inscription</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @enderror
                 </div>
             </div>
         </div>
+    @endsection
+    @section('scripts')
+        <script>
+            function closeModal() {
+                $('#modelerror').hide();
+            }
+        </script>
     @endsection

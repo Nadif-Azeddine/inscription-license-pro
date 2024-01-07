@@ -10,11 +10,8 @@ class Licence extends Model
     use HasFactory;
     protected $table = 'licence';
     protected $fillable = [
-        'licence_id',
         'departement_id',
-        'specialite_id',
         'nom_licence',
-        'anneun_id',
         'order',
     
     ];

@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Candidat extends Model
 {
     use HasFactory;
-    protected $table = 'Candidat';
+    protected $table = 'candidat';
     protected $fillable = [
         'user_id',
         'ville_id',
         'etablissement_id',
         'adresse',
-        'Date_naissance',
-        'num_tel',
-        'email',
         'CIN',
         'CNE',
         'num_apoge',
@@ -33,5 +30,13 @@ class Candidat extends Model
     }
     public function candidature(){
         return $this->hasOne(Candidature::class);
+    }
+
+    public function bac(){
+        return $this->hasOne(Bac::class);
+    }
+
+    public function bacpd(){
+        return $this->hasOne(BacPd::class);
     }
 }

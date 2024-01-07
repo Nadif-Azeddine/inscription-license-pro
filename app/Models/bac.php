@@ -10,18 +10,17 @@ class Bac extends Model
     use HasFactory;
     protected $table = 'bac';
     protected $fillable = [
+        'candidat_id',
         'option_id',
-        'Moy_national',
-        'Moy_regional',
-        'Moy_general',
-        'Date_obt',
-        'Mention',
+        'moy_general',
+        'date_obt',
+        'mention',
     ];
 
     public function option(){
-        return $this->hasOne(BacOption::class);
+        return $this->belongsTo(BacOption::class, 'option_id');
     }
-    public function diplome(){
-        return $this->belongsTo(diplome::class);
+    public function candidat(){
+        return $this->belongsTo(Candidat::class);
     }
 }

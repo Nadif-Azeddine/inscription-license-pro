@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
  
-        Schema::create('anneun', function (Blueprint $table) {
+        Schema::create('anneeun', function (Blueprint $table) {
             $table->id();
             $table->string('annee_universitaire');
             $table->timestamps();

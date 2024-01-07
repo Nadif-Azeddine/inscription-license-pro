@@ -10,17 +10,13 @@ class Diplome extends Model
     use HasFactory;
     protected $table = 'diplome';
     protected $fillable = [
-        'diplome_id',
-        'etablissement_id',
-        'bacpd_id',
-        'bac_id',
         'nom_diplome',
     ];
     public function candidature(){
         return $this->belongsTo(Candidature::class);
     }
     public function etablissement(){
-        return $this->belongsTo(Etablissement::class);
+        return $this->belongsToMany(Etablissement::class);
     }
     public function bacpd(){
         return $this->hasOne(BacPd::class);
