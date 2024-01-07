@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,70 +18,54 @@
     <link href="{{ URL('/fontawesome/css/all.min.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="{{ URL('/js/popper/popper.js')}}" defer></script>
+    <script src="{{ URL('/js/popper/popper.js') }}" defer></script>
     <script src="{{ URL('/js/jquery.js') }}"></script>
-    <script src="{{ URL('/js/bootstrap.min.js') }}"  ></script>
+    <script src="{{ URL('/js/bootstrap.min.js') }}"></script>
     <!-- Scripts -->
 </head>
+
 <body>
+
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+        <nav class="navbar navbar-expand-md navbar-light bg-white border">
+            <div class="px-2 px-sm-4 col-12  d-flex justify-content-between align-items-center">
+                <a class="navbar-brand text-3xl" href="{{ url('/') }}">
+                    {{ __('License Pro') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                <div class="d-flex align-items-center ">
+                    <div class="dropdown" style="">
+                        <button class="" type="button" id="triggerId" data-bs-toggle="dropdown"> <i
+                                class="fa-solid fa-earth-africa fs-5 mt-2"></i> </button>
+                        <div class="dropdown-menu shadow-sm end-0" style="left: unset" aria-labelledby="triggerId">
+                            <ul class="m-0 p-0">
+                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
+                                        aria-hidden="true"></i>English</li>
+                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
+                                        aria-hidden="true"></i>French</li>
+                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
+                                        aria-hidden="true"></i>Arabic</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="avatar mx-2">
+                    </div>
+                    @auth
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                            <button type="submit"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+                        </form>
+                    @endauth
                 </div>
+
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
             @yield('content')
         </main>
     </div>
 </body>
+@yield('scripts')
+
 </html>

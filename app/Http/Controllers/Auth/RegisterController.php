@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -29,17 +30,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::CANDIDAT;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest');
+    // }
 
     /**
      * Get a validator for an incoming registration request.
@@ -50,9 +51,13 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'nom' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+            'sexe' => ['required'],
+            'date_naissance' => ['required', 'date'],
+            'email' => ['required', 'string', 'email', 'max:255', Auth::id() ? '' : 'unique:users'],
+            'tel' => ['required', 'string', 'max:20', Auth::id() ? '' : 'unique:users'],
+            'password' => [Auth::id() ? '' : 'required', 'string', 'min:8', Auth::id() ? '' : 'confirmed'],
         ]);
     }
 
@@ -64,9 +69,27 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        if (Auth::check()) {
+            return User::updateOrCreate(
+                ['id' => Auth::id()],
+                [
+                    'nom' => $data['nom'],
+                    'prenom' => $data['prenom'],
+                    'genre' => $data['sexe'],
+                    'date_naissance' => $data['date_naissance'],
+                    'email' => $data['email'],
+                    'tel' => $data['tel'],
+                ]
+            );
+        }
+
+        return User::Create([
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'genre' => $data['sexe'],
+            'date_naissance' => $data['date_naissance'],
             'email' => $data['email'],
+            'tel' => $data['tel'],
             'password' => Hash::make($data['password']),
         ]);
     }

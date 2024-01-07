@@ -16,6 +16,11 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function __invoke(Request $request)
+    {
+        return __("welcome.LP");
+    }
+
     /**
      * Show the application dashboard.
      *
