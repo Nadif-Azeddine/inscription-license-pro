@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
 
             @include('partials.progress')
-            
+
             <div class="col-md-8 mb-3 mt-2">
                 <div class="px-4 py-3 pb-5">
                     <div class="col-12 mb-3 text-center d-flex flex-column justify-content-center align-items-center">
@@ -68,7 +68,7 @@
 
                                 <div class="col-6">
                                     <label class="col-form-label">{{ __('Sexe') }}</label>
-                                    <select class="form-select" name="sexe">
+                                    <select class="form-select @error('sexe') is-invalid @enderror" name="sexe">
                                         <option class="text-muted">{{ __('Sexe') }}</option>
                                         <option value="H"
                                             {{ Auth::user() != null && Auth::user()->genre === 'H' ? 'selected' : '' }}>
@@ -77,6 +77,11 @@
                                             {{ Auth::user() != null && Auth::user()->genre === 'F' ? 'selected' : '' }}>
                                             {{ __('Femme') }}</option>
                                     </select>
+                                    @error('sexe')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 </div>
                             </div>
 
@@ -162,19 +167,18 @@
                     <div class="modal fade show" id="modelerror" style="display: block; background: #4a4a4a65"
                         tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered max-w-sm-100 w-px-400" role="document">
-                            <div class="modal-content py-4 text-center shadow-lg" style="border-radius: 20px; border: 0px solid black">
-                                <div class="position-relative mb-2 text-center" style="z-index: 10">
+                            <div class="modal-content  text-center shadow-lg" style="border-radius: 20px; border: 0px solid black">
+                                <div class="mb-3 position-relative text-center" style="z-index: 10">
                                     <button onclick="closeModal()" data-bs-dismiss="modal"
-                                        class=" position-absolute end-0 top-0 py-2 px-3 rounded-circle text-white "><span><i class="fa fa-x" aria-hidden="true"></i></span></button>
+                                        class=" position-absolute  rounded-circle text-white " style="top: 10px; right: 10px"><span><i class="fa fa-x" aria-hidden="true"></i></span></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body py-4">
                                     <div class="mb-4">
-                                        <h2 class="modal-title fw-bold">ERROR</h2>
-                                        <p class="text-danger">it seems that you already create an account, try to continue inscription instead</p>
+                                        <h6 class="fw-500">it seems that you already create an account, try to continue inscription instead</h6>
                                     </div>
                                     <div class="row justify-content-around">
                                         <a href="{{ route('login') }}"
-                                            class="btn btn-success rounded-pill col-8 text-white ">Continue Inscription</a>
+                                            class="btn btn-primary rounded-pill col-8 text-white ">Continue Inscription</a>
                                     </div>
                                 </div>
                             </div>
