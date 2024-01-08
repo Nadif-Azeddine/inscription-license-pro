@@ -29,5 +29,11 @@ Route::group(['prefix' => '/inscription', 'middleware' => ['auth']], function ()
     Route::post('/candidat', [CandidatController::class, 'save'])->name('save_candidat');
 
     Route::get('/bac', [CandidatController::class, 'bac'])->middleware('is_candidat')->name('bac');
+    Route::post('/bac', [CandidatController::class, 'saveBac'])->middleware('is_candidat')->name('save_bac');
+
+    // bac +2
+    Route::get('/bacpd', [CandidatController::class, 'bacPd'])->middleware('is_bac')->name('bacpd');
+    Route::post('/bacpd', [CandidatController::class, 'saveBacPd'])->middleware('is_bac')->name('save_bacpd');
+
 });
 

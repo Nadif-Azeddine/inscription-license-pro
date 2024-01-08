@@ -13,6 +13,6 @@ class BacOption extends Model
         'option', 
     ];
     public function option(){
-        return $this->belongsToMany(Bac::class);
+        return $this->hasMany(Bac::class, 'option_id');
     }
 }
