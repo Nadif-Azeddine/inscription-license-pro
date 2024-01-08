@@ -24,7 +24,7 @@ class Candidature extends Model
         return $this->hasOne(diplome::class, 'diplome_id');
     }
     public function dossier(){
-        return $this->hasOne(Dossier::class);
+        return $this->hasOne(Dossier::class, 'candidature_id');
     }
     public function inscription(){
         return $this->hasMany(Inscription::class);

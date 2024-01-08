@@ -16,7 +16,7 @@ class Specialite extends Model
     public function licence(){
         return $this->hasMany(Licence::class);
     }
-    public function typebpd(){
-        return $this->belongsToMany(TypeBpd::class);
+    public function bacpds(){
+        return $this->hasMany(BacPd::class, 'specialite_id');
     }
 }

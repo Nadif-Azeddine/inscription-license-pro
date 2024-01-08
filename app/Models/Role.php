@@ -10,18 +10,17 @@ class Role extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','display_name','description','parent_id'];
+    protected $fillable = ['name','description'];
 
     public function scopeSearch($query, $search)
     {
-        return $query->where('name', 'like', '%'.$search.'%')
-            ->orWhere('display_name', 'like', '%'.$search.'%')
+        return $query->where('nom', 'like', '%'.$search.'%')
             ->orWhere('description', 'like', '%'.$search.'%');
     }
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class, 'role_users');
     }
     
     public function permissions()

@@ -21,10 +21,4 @@ class Licence extends Model
     public function departement(){
         return $this->belongsTo(Departement::class);
     }
-    public function specialite(){
-        return $this->hasOne(Specialite::class);
-    }
-    public function anneun(){
-        return $this->belongsTo(Anneun::class);
-    }
 }

@@ -24,8 +24,8 @@ class BacPd extends Model
         'date_reussite_da',
         'mention',      
     ];
-    public function typebpd(){
-        return $this->hasOne(Specialite::class);
+    public function specialite(){
+        return $this->belongsTo(Specialite::class, 'specialite_id');
     }
     public function diplome(){
         return $this->belongsTo(diplome::class, 'diplome_id');

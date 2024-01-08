@@ -16,16 +16,16 @@
                             @csrf
                             <div class="row mb-3">
                                 <div class="col-6">
-                                    <label for="nom" class="col-form-label ">{{ __('Bac option') }}</label>
-                                    <select class="form-select @error('option') is-invalid @enderror" name="option">
-                                        <option class="text-muted">{{ __('option') }}</option>
+                                    <label for="nom" class="col-form-label ">{{ __('Specialite') }}</label>
+                                    <select class="form-select @error('specialite') is-invalid @enderror" name="specialite">
+                                        <option class="text-muted">{{ __('specialite') }}</option>
                                         @foreach ($specialites as $specialite)
                                             <option value="{{ $specialite->id }}"
-                                                {{ Auth::user()->candidat->bac && Auth::user()->candidat->bac->option_id === $specialite->id ? 'selected' : '' }}>
-                                                {{ $specialite->option }}</option>
+                                                {{ Auth::user()->candidat->bacpd && Auth::user()->candidat->bacpd->specialite_id === $specialite->id ? 'selected' : '' }}>
+                                                {{ $specialite->libelle }}</option>
                                         @endforeach
                                     </select>
-                                    @error('option')
+                                    @error('specialite')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -33,6 +33,23 @@
                                 </div>
 
                                 <div class="col-6">
+                                    <label for="nom" class="col-form-label ">{{ __('Diplome') }}</label>
+                                    <select class="form-select @error('diplome') is-invalid @enderror" name="diplome">
+                                        <option class="text-muted">{{ __('diplome') }}</option>
+                                        @foreach ($diplomes as $diplome)
+                                            <option value="{{ $diplome->id }}"
+                                                {{ Auth::user()->candidat->bacpd && Auth::user()->candidat->bacpd->diplome_id === $diplome->id ? 'selected' : '' }}>
+                                                {{ $diplome->nom_diplome }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('diplome')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+
+                                {{-- <div class="col-6">
                                     <label for="prenom" class="col-form-label ">{{ __('Date obtination') }}</label>
                                     <select class="form-select @error('date_obt') is-invalid @enderror" name="date_obt">
                                         <option value="2018"
@@ -63,7 +80,7 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="row">
                                 <div class="col-6">

@@ -9,6 +9,7 @@ use App\Models\Bac;
 use App\Models\BacOption;
 use App\Models\Candidat;
 use App\Models\Candidature;
+use App\Models\Diplome;
 use App\Models\Etablissement;
 use App\Models\Specialite;
 use App\Models\Ville;
@@ -96,10 +97,12 @@ class CandidatController extends Controller
     public function bacPd()
     {
         $specialites = Specialite::all();
+        $diplomes = Diplome::all();
         return view(
             'inscription.bacpd',
             [
-                'specialites' => $specialites
+                'specialites' => $specialites,
+                'diplomes' => $diplomes,
             ]
         );
     }
