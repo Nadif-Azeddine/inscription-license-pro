@@ -20,15 +20,15 @@
     </div>
         
     </div>
-    @if (Auth::user()->candidat && Auth::user()->candidat->bacpd)
+    @if (Auth::check() && Auth::user()->candidat && Auth::user()->candidat->bacpd)
     <div class="position-absolute top-0 start-0 bg-info"
         style="height: 7px; z-index: 0; width:100%"></div>       
     @endif
-    @if (Auth::user()->candidat && Auth::user()->candidat->bac)
+    @if (Auth::check() && Auth::user()->candidat && Auth::user()->candidat->bac)
     <div class="position-absolute top-0 start-0 bg-info"
     style="height: 7px; z-index: 0; width:66.6666%"></div> 
     @endif
-    @if (Auth::user()->candidat)
+    @if (Auth::check() && Auth::user()->candidat)
     <div class="position-absolute top-0 start-0 bg-info"
     style="height: 7px; z-index: 0; width:33.3333%"></div> 
     @endif
