@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Licence extends Model
 {
     use HasFactory;
-    protected $table = 'licence';
+    protected $table = 'license';
     protected $fillable = [
         'departement_id',
         'nom_licence',
+        'specialite_id',
         'order',
     
     ];
@@ -19,6 +20,10 @@ class Licence extends Model
         return $this->hasMany(Inscription::class);
     }
     public function departement(){
-        return $this->belongsTo(Departement::class);
+        return $this->belongsTo(Departement::class,'departement_id');
     }
+    public function Specialite(){
+        return $this->belongsTo(Specialite::class,'specialite_id');
+    }
+    
 }

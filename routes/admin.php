@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\admin\AdminController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\LicenceController;
+use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +21,7 @@ use Illuminate\Support\Facades\Route;
 // admin routes
 Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
+    Route::get('/licences', [AdminController::class, 'Listlicence'])->name('licences');
+    Route::get('/users', [AdminController::class, 'listUsers'])->name('Users');
 });
 
