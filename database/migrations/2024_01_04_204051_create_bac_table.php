@@ -18,10 +18,10 @@ return new class extends Migration
             $table->unsignedBigInteger('option_id');
             $table->unsignedBigInteger('candidat_id');
             $table->string('moy_general');
-            $table->date('date_obt');
+            $table->string('date_obt');
             $table->string('mention');
             $table->timestamps();
-            $table->foreign('option_id')->references('id')->on('option')->onDelete('cascade');
+            $table->foreign('option_id')->references('id')->on('bacoption')->onDelete('cascade');
             $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
         });
 

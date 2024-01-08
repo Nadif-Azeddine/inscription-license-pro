@@ -19,10 +19,10 @@
                                     <label for="nom" class="col-form-label ">{{ __('Bac option') }}</label>
                                     <select class="form-select @error('option') is-invalid @enderror" name="option">
                                         <option class="text-muted">{{ __('option') }}</option>
-                                        @foreach ($options as $option)
-                                            <option value="{{ $option->id }}"
-                                                {{ Auth::user()->candidat->bac && Auth::user()->candidat->bac->option_id === $option->id ? 'selected' : '' }}>
-                                                {{ $option->option }}</option>
+                                        @foreach ($specialites as $specialite)
+                                            <option value="{{ $specialite->id }}"
+                                                {{ Auth::user()->candidat->bac && Auth::user()->candidat->bac->option_id === $specialite->id ? 'selected' : '' }}>
+                                                {{ $specialite->option }}</option>
                                         @endforeach
                                     </select>
                                     @error('option')
@@ -70,7 +70,7 @@
                                     <label for="moy_gen" class="col-form-label ">{{ __('Moyenne general') }}</label>
 
                                     <div class="col-12">
-                                        <input id="moy_gen" type="text" placeholder="00.00"
+                                        <input id="moy_gen" type="number" placeholder="00.00"
                                             value="{{ Auth::user()->candidat->bac->moy_general ?? old('moy_gen') }}" 
                                             class="form-control @error('moy_gen') is-invalid @enderror" name="moy_gen"
                                             required autofocus>

@@ -1,12 +1,17 @@
 <?php
 
-use App\Models\BacOption;
-use Illuminate\Database\Seeder;
-use App\Models\Option; // Make sure to adjust the namespace if needed
+namespace Database\Seeders;
 
-class OptionSeeder extends Seeder
+use App\Models\BacOption;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class BacOptionSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
         $options = [
             'BAC SCIENCES AGRONOMIQUES',
