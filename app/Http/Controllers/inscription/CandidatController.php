@@ -133,6 +133,16 @@ class CandidatController extends Controller
                 ]
             );
 
+            if(!Auth::user()->candidature){
+                $candidature = Candidature::create([
+                    'candidat_id' => Auth::user()->candidat->id,
+                    'bac_id' => Auth::user()->candidat->bac->id,
+                    'bacpd_id' => $bacpd->id,
+                    'anneeun' => date('Y').'-'.(date('Y')+1),
+                    'etat' => 'en cours',
+                ]);
+            }
+
             if ($bacpd) {
                 return redirect()->route('candidature');
             }

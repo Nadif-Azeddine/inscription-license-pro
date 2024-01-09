@@ -8,16 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class AnneUn extends Model
 {
     use HasFactory;
-    protected $table = 'anneeun';
+    protected $table = 'annee_univ';
+    protected $primaryKey = 'anneeun';
+    public $timestamps = false;
     protected $fillable = [
-        "annee_universitaire"
+        "anneeun"
     ];
-    public function inscriptions()
+    public function candidatures()
     {
-        return $this->hasMany(Inscription::class);
-    }
-    public function licences()
-    {
-        return $this->hasMany(Licence::class);
+        return $this->hasMany(Candidature::class, 'anneeun');
     }
 }

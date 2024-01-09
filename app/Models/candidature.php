@@ -13,7 +13,7 @@ class Candidature extends Model
         'candidat_id',
         'bac_id',
         'bacpd_id',
-        'anneeun_id',
+        'anneeun',
         'etat',
       
     ];
@@ -38,6 +38,6 @@ class Candidature extends Model
     }
 
     public function anneeun(){
-        return $this->belongsTo(AnneUn::class, 'anneeun_id');
+        return $this->belongsTo(AnneUn::class, 'anneeun');
     }
 }

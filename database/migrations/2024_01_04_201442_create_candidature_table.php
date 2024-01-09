@@ -17,15 +17,13 @@ return new class extends Migration
             $table->unsignedBigInteger('candidat_id');
             $table->unsignedBigInteger('bac_id');
             $table->unsignedBigInteger('bacpd_id');
-            $table->unsignedBigInteger('license_id');
-            $table->unsignedBigInteger('anneeun_id');
+            $table->string('anneeun');
             $table->string('etat');
             $table->timestamps();
             $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
             $table->foreign('bac_id')->references('id')->on('bac')->onDelete('cascade');
             $table->foreign('bacpd_id')->references('id')->on('bacpd')->onDelete('cascade');
-            $table->foreign('license_id')->references('id')->on('license')->onDelete('cascade');
-            $table->foreign('anneeun_id')->references('id')->on('anneeun')->onDelete('cascade');
+            $table->foreign('anneeun')->references('anneeun')->on('annee_univ')->onDelete('cascade');
         
         });
         Schema::enableForeignKeyConstraints();
