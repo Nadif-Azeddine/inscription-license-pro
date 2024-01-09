@@ -3,18 +3,22 @@
 namespace App\Http\Controllers\inscription;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\BacPdRequest;
 use App\Http\Requests\BacRequest;
 use App\Http\Requests\CandidatRequest;
 use App\Models\Bac;
 use App\Models\BacOption;
+use App\Models\BacPd;
 use App\Models\Candidat;
 use App\Models\Candidature;
 use App\Models\Diplome;
 use App\Models\Etablissement;
+use App\Models\Licence;
 use App\Models\Specialite;
 use App\Models\Ville;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PharIo\Manifest\License;
 
 class CandidatController extends Controller
 {
@@ -107,5 +111,47 @@ class CandidatController extends Controller
         );
     }
 
+
+    public function saveBacPd(BacPdRequest $request)
+    {
+        try {
+            $validated = $request->validated();
+            $bacpd = BacPd::updateOrCreate(
+                ['candidat_id' => Auth::user()->candidat->id],
+                [
+                    'candidat_id' => Auth::user()->candidat->id,
+                    'diplome_id' => $validated['diplome_id'],
+                    'specialite_id' => $validated['specialite_id'],
+                    'moy_pa' => $validated['moy_pa'],
+                    'moy_da' => $validated['moy_da'],
+                    'nb_etudiant_pa' => $validated['nb_etudiant_pa'],
+                    'classment_pa' => $validated['classment_pa'],
+                    'nb_etudiant_da' => $validated['nb_etudiant_da'],
+                    'classment_da' => $validated['classment_da'],
+                    'date_reussite_pa' => $validated['date_reussite_pa'],
+                    'date_reussite_da' => $validated['date_reussite_da'],
+                ]
+            );
+
+            if ($bacpd) {
+                return redirect()->route('candidature');
+            }
+
+        } catch (\Exception $e) {
+            return dd($e->getMessage());
+        }
+    }
+
+    // choix
+    public function choix()
+    {
+        $licenses = Licence::all();
+        return view(
+            'inscription.choix',
+            [
+                'specialites' => $licenses,
+            ]
+        );
+    }
 
 }

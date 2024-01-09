@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('departement_id');
             $table->unsignedBigInteger('specialite_id');
             $table->string('nom_licence');
-            $table->string('order');
             $table->timestamps();
             $table->foreign('departement_id')->references('id')->on('departement')->onDelete('cascade');
             $table->foreign('specialite_id')->references('id')->on('specialite')->onDelete('cascade');

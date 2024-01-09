@@ -28,7 +28,10 @@ class LoginController extends Controller
      * @var string
      */
     protected function redirectTo()
-    {
+    {   
+        if (Auth::user()->candidat->bacpd) {
+            return RouteServiceProvider::BACPD;
+        } else
         if (Auth::user()->candidat) {
             return RouteServiceProvider::BAC;
         } else {

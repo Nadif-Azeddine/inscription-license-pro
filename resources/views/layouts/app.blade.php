@@ -49,9 +49,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="avatar mx-2">
-                    </div>
                     @auth
+                    <div class="avatar mx-2" style="background: url('/images/person.jpg')">
+                    </div>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                             <button type="submit"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>

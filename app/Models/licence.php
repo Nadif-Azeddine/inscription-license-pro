@@ -12,11 +12,9 @@ class Licence extends Model
     protected $fillable = [
         'departement_id',
         'nom_licence',
-        'order',
-    
     ];
-    public function inscriptions(){
-        return $this->hasMany(Inscription::class);
+    public function candidatures(){
+        return $this->belongsToMany(Candidature::class, 'inscription');
     }
     public function departement(){
         return $this->belongsTo(Departement::class);

@@ -10,10 +10,9 @@ class Inscription extends Model
     use HasFactory;
     protected $table = 'inscription';
     protected $fillable = [
-        'inscription_id',
         'licence_id',
-        'anneun_id',
         'candidature_id',
+        'ordre'
     ];
     public function licence_id(){
         return $this->belongsTo(Licence::class);
