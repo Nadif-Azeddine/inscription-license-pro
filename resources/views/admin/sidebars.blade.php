@@ -109,30 +109,22 @@
                 <li class="g_heading">Main</li>
                 <li><a href=""><i class="ti-home"></i><span>Dashboard</span></a></li>
                 <li class="g_heading">Chart, Froms & Elements</li>
-               
-                <li>
-                    <a href="javascript:void(0)" class="has-arrow"><i class="ti-pencil-alt"></i><span>Forms</span></a>
-                    <ul>
-                        <li><a href="">Basic Elements</a></li>
-                        <li><a href="form-advanced.html">Advanced Elements</a></li>
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="form-wizard.html">Form Wizard</a></li>
-                        <li><a href="form-summernote.html">Summernote</a></li>
-                        <li><a href="form-markdown.html">Markdown</a></li>
-                    </ul>
-                </li>
+             
                 <li class="active">
-                    <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>Tables</span></a>
+                    <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>Tabels</span></a>
                     <ul>
                         <li><a href="table-basic.html">condidature</a></li>
                         <li class="active"><a href="{{ route('licences') }}">Licence</a></li>
+                        <li><a href="{{ route('XMLlicences') }}">XML-Licence</a></li>
                         <li><a href="table-editable.html">dossier-condidature</a></li>
-                        <li><a href="{{ route('Users') }}">Permission</a></li>
+                        <li><a href="{{ route('Users') }}">Users</a></li>
+                        <li><a href="{{ route('XMLUsers') }}">XML-Users</a></li>
+                       
                     </ul>
                 </li>
                 <li class="g_heading">Users</li>
                 <li><a href="page-profile.html"><i class="ti-user"></i><span>Profile</span></a></li>
-                <li><a href="page-timeline.html"><i class="ti-menu-alt"></i><span>list-admins</span></a></li>
+                <li><a href="{{ route('Users') }}"><i class="ti-menu-alt"></i><span>list-admins</span></a></li>
                
                
         </nav>

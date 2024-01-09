@@ -34,9 +34,13 @@
                                             <td>{{ __($User->genre) }}</td>
                                             <td>{{ __($User->date_naissance) }}</td>
                                             <td>                                     
-                                                <a href="#" class="icon-link pen-icon" data-toggle="tooltip" title="Edit">
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                </a>
+                                                <form id="deleteForm" action="{{ route('supprimerUsers', ['id' => $User->id]) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="icon-link trash-icon" data-toggle="tooltip" title="Delete" onclick="confirmDelete()">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
                                                 <a href="#" class="icon-link trash-icon" data-toggle="tooltip" title="Delete">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </a>
@@ -52,7 +56,61 @@
             </div>
        
         </div>
- 
+        <style>
+            .confirmation-dialog {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                z-index: 1000;
+            }
+        
+            .confirmation-dialog h2 {
+                margin-bottom: 10px;
+            }
+        
+            .confirmation-dialog button {
+                padding: 10px 15px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        
+            .confirmation-dialog button.cancel {
+                background-color: #d9534f;
+                color: #fff;
+            }
+        
+            .confirmation-dialog button.confirm {
+                background-color: #5bc0de;
+                color: #fff;
+            }
+        </style>
+        
+        <div class="confirmation-dialog" id="confirmationDialog">
+            <h2>Are you sure you want to delete this licence?</h2>
+            <button class="cancel" onclick="cancelDelete()">Cancel</button>
+            <button class="confirm" onclick="submitDelete()">Delete</button>
+        </div>
+        
+        <script>
+            function confirmDelete() {
+                document.getElementById('confirmationDialog').style.display = 'block';
+            }
+        
+            function cancelDelete() {
+                document.getElementById('confirmationDialog').style.display = 'none';
+            }
+        
+            function submitDelete() {
+                document.getElementById('deleteForm').submit();
+            }
+        </script>
+     
 
 @section('scripts')
 @endsection
