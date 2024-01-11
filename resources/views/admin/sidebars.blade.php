@@ -29,43 +29,26 @@
                             aria-label="Search">
                     </form>
                 </li>
-                <li class="nav-item"><a class="nav-link nav-link-icon" href="javascript:void(0);"><i class="fa fa-cogs"></i></a></li>
+                
                 <li class="nav-item dropdown">
-                    <a class="nav-link nav-link-icon" href="javascript:void(0);" id="navbar_1_dropdown_2" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                            class="fa fa-bell"></i></a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-xl py-0">
-                        <div class="py-3 px-3">
-                            <h5 class="heading h6 mb-0">Notifications <span
-                                    class="badge badge-pill badge-primary text-uppercase float-right">3</span></h5>
+                    <div class="d-flex align-items-center ">
+                        <div class="dropdown" style="">
+                            <button class="" type="button" id="triggerId" data-bs-toggle="dropdown"> <i
+                                    class="fa-solid fa-earth-africa fs-5 mt-2"></i> </button>
+                            <div class="dropdown-menu shadow-sm end-0" style="left: unset" aria-labelledby="triggerId">
+                                <ul class="m-0 p-0">
+                                    <li class="dropdown-item col-12"><a href="/local?lang=en">
+                                            <i class="fa fa-language me-2" aria-hidden="true"></i> <span>@lang('dropdown.en')</span>
+                                        </a></li>
+                                    <li class="dropdown-item col-12"><a href="/local?lang=fr">
+                                            <i class="fa fa-language me-2" aria-hidden="true"></i> <span>@lang('dropdown.fr')</span>
+                                        </a></li>
+                                    <li class="dropdown-item col-12"><a href="/local?lang=ar">
+                                            <i class="fa fa-language me-2" aria-hidden="true"></i><span>@lang('dropdown.ar')</span>
+                                        </a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="list-group">
-                            <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex">
-                                <div class="list-group-img"><span class="avatar bg-purple">JD</span></div>
-                                <div class="list-group-content">
-                                    <div class="list-group-heading">Johnyy Depp <small>10:05 PM</small></div>
-                                    <p class="text-sm">Lorem ipsum dolor consectetur adipiscing eiusmod tempor</p>
-                                </div>
-                            </a>
-                            <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex">
-                                <div class="list-group-img"><span class="avatar bg-pink">TC</span></div>
-                                <div class="list-group-content">
-                                    <div class="list-group-heading">Tom Cruise <small>10:05 PM</small></div>
-                                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur eiusmod tempor</p>
-                                </div>
-                            </a>
-                            <a href="javascript:void(0);" class="list-group-item list-group-item-action d-flex">
-                                <div class="list-group-img"><span class="avatar bg-blue">WS</span></div>
-                                <div class="list-group-content">
-                                    <div class="list-group-heading">Will Smith <small>10:05 PM</small></div>
-                                    <p class="text-sm">Lorem sit amet consectetur adipiscing eiusmod tempor</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="py-3 text-center">
-                            <a href="javascript:void(0);" class="link link-sm link--style-3">View all notifications</a>
-                        </div>
-                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link nav-link-icon" href="javascript:void(0);" id="navbar_1_dropdown_3" role="button"
@@ -108,16 +91,16 @@
             <ul id="main-menu" class="metismenu">
                 <li class="g_heading">Main</li>
                 <li><a href=""><i class="ti-home"></i><span>Dashboard</span></a></li>
-                <li class="g_heading">Chart, Froms & Elements</li>
+                <li class="g_heading">Tables, Froms & Elements</li>
              
                 <li class="active">
                     <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>Tabels</span></a>
                     <ul>
                         <li><a href="{{ route('condidats') }}">condidates</a></li>
-                        <li class="active"><a href="{{ route('licences') }}">Licence</a></li>
+                        <li class="active"><a href="{{ route('licences') }}">@lang('admin.licnece')</a></li>
                         <li><a href="{{ route('XMLlicences') }}">XML-Licence</a></li>
                         <li><a href="table-editable.html">dossier-condidature</a></li>
-                        <li><a href="{{ route('Users') }}">Users</a></li>
+                        <li><a href="{{ route('Users') }}">@lang('admin.Users')</a></li>
                         <li><a href="{{ route('XMLUsers') }}">XML-Users</a></li>
                         <li><a href="{{ route('inscriptions') }}">inscriptions</a></li>
                         <li><a href="{{ route('XMLinscriptions') }}">XMLinscriptions</a></li>

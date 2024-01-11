@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('Liste Users') }} </h2>
+                            <h2> @lang('admin.Liste Users') </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">

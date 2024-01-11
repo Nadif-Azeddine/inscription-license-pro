@@ -15,7 +15,7 @@
                                     <thead>
                                         <tr>
                                             <th>{{ __('user') }}</th>
-                                            <th>{{ __('licnece') }}</th>
+                                            <th>{{ __('licence') }}</th>
                                             <th>{{ __('order') }}</th>
                                             <th>{{ __('status') }}</th>
                                             <th>{{ __('mod/sup') }}</th>
