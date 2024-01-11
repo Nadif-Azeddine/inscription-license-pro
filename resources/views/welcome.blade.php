@@ -5,10 +5,9 @@
         <div class="row text-center">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <span class="fs-5 text-muted fw-bold">2023/2024</span>
-                <h1 class="large-text fw-bold col-12 col-md-8" style="line-height: 1.1">
-                    {{ __('Inscription Licence Professionnelle') }}</h1>
-                <p class="col-11 col-lg-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam nihil
-                    commodi praesentium voluptate facilis molestiae qui sed architecto in doloremque.</p>
+                <h1 class="large-text fw-bold col-12 col-md-8 mb-2" style="line-height: 1.1">
+                    @lang("welcome.LP")</h1>
+                <p class="col-11 col-lg-8">@lang('welcome.parag')</p>
                 <div class="row col-12 col-sm-7  flex-wrap">
                     <div class="col-sm-6 col-12 my-2">
                         <a class="btn col-12 btn-primary rounded-pill"

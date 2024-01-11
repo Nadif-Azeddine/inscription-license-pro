@@ -33,6 +33,17 @@ body {
     background-color: var(--light-color);
     max-width: 100%;
 }
+
+.screen{
+    min-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(
+        95deg,
+        rgba(245, 246, 255, 0.979),
+        rgba(253, 253, 255, 0.979)
+    );
+}
+
 .navbar {
     background: var(--light-color-2) !important;
 }

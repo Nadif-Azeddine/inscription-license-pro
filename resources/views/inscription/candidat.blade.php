@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="screen" >
+
     <div class="container py-4 pb-4 px-4">
         <div class="row justify-content-center">
            
@@ -8,9 +10,9 @@
 
             <div class="col-md-8 mb-3 mt-2">
                 <div class=" px-4 py-3 pb-5">
-                    <div class="col-12 text-center mb-3 d-flex flex-column justify-content-center align-items-center">
-                        <span style="font-size: 3em;"><i class="fa text-primary fa-user-graduate"
-                                aria-hidden="true"></i></span>
+                    <div class="col-12 mb-3 mt-3 text-center d-flex flex-column justify-content-center align-items-center">
+                        <h1 class="fw-bold text-dark">Informations Scolaire</h1>
+                        <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                     {{-- <hr> --}}
                     <div class="d-flex  flex-column justify-content-center align-items-center  ">
@@ -98,7 +100,7 @@
                                 </div>
                             </div>
                             <div class="col-12 mt-4">
-                                <button type="submit" class="btn rounded-pill py-3 btn-primary col-12">
+                                <button type="submit" class="btn rounded-pill py-3 btn-info col-12">
                                     {{ __('Envoyer') }}
                                 </button>
                             </div>
@@ -107,4 +109,5 @@
                 </div>
             </div>
         </div>
+    </div>
     @endsection

@@ -3,31 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    
+
+    public function local(Request $request)
     {
-        $this->middleware('auth');
+        Session::put('local', $request->lang);
+        app()->setLocale($request->lang);
+        // dd(app()->getLocale());
+        // dd(Session::get('local'));
+        return back();
     }
 
-    public function __invoke(Request $request)
-    {
-        return __("welcome.LP");
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('home');
-    }
 }

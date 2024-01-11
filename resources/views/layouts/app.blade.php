@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ __("Inscription LP 2024") }}</title>
+    <title>{{ __('Inscription LP 2024') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -30,7 +30,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white border">
             <div class="px-2 px-sm-4 col-12  d-flex justify-content-between align-items-center">
-                <a class="navbar-brand text-3xl fw-500" href="{{ url('/') }}">
+                <a class="navbar-brand text-3xl text-primary fw-500" href="{{ url('/') }}">
                     {{ __('License Pro') }}
                 </a>
 
@@ -40,33 +40,48 @@
                                 class="fa-solid fa-earth-africa fs-5 mt-2"></i> </button>
                         <div class="dropdown-menu shadow-sm end-0" style="left: unset" aria-labelledby="triggerId">
                             <ul class="m-0 p-0">
-                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
-                                        aria-hidden="true"></i>English</li>
-                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
-                                        aria-hidden="true"></i>French</li>
-                                <li class="dropdown-item col-12"><i class="fa fa-language me-2"
-                                        aria-hidden="true"></i>Arabic</li>
+                                <li class="dropdown-item col-12"><a href="/local?lang=en">
+                                        <i class="fa fa-language me-2" aria-hidden="true"></i> <span>@lang('dropdown.en')</span>
+                                    </a></li>
+                                <li class="dropdown-item col-12"><a href="/local?lang=fr">
+                                        <i class="fa fa-language me-2" aria-hidden="true"></i> <span>@lang('dropdown.fr')</span>
+                                    </a></li>
+                                <li class="dropdown-item col-12"><a href="/local?lang=ar">
+                                        <i class="fa fa-language me-2" aria-hidden="true"></i><span>@lang('dropdown.ar')</span>
+                                    </a></li>
                             </ul>
                         </div>
                     </div>
                     @auth
-                    <div class="avatar mx-2" style="background: url('/images/person.jpg')">
+                        <div class="dropdown" style="">
+                            <div class="avatar mx-2" type="button" id="triggerId" data-bs-toggle="dropdown"
+                                style="background: url('/images/person.jpg')"></div>
+                            <div class="dropdown-menu shadow-sm end-0" style="left: unset" aria-labelledby="triggerId">
+                                <ul class="m-0 p-0">
+                                    <li class="dropdown-item col-12">
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <button type="submit"><i class="fa fa-arrow-circle-right"
+                                                    aria-hidden="true"></i> Fermer Session</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <form action="{{ route('logout') }}" method="POST">
-                        @csrf
-                            <button type="submit"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
-                        </form>
-                    @endauth
-                </div>
-
+                @endauth
             </div>
-        </nav>
 
-        <main class="">
-            @yield('content')
-        </main>
+    </div>
+    </nav>
+
+    <main class="">
+        @yield('content')
+    </main>
     </div>
 </body>
+{{-- core --}}
+<script></script>
 @yield('scripts')
 
 </html>
