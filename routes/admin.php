@@ -20,7 +20,7 @@ use App\Http\Controllers\admin\AdminController;
 */
 
 // admin routes
-Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'set-locale']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::get('/fetch-specialites', [AdminController::class, 'fetchSpecialites'])->name('fetchSpecialites');
     Route::get('/licences', [AdminController::class, 'Listlicence'])->name('licences');

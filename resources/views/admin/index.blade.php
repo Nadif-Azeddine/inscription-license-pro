@@ -7,14 +7,14 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('LISTE condidature') }} </h2>
+                            <h2> @lang('welcome.LP')</h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Name {{Session::get('local')}}</th>
                                             <th>Position</th>
                                             <th>Office</th>
                                             <th>Age</th>

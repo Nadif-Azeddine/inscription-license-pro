@@ -17,7 +17,6 @@ return [
     "Tables, Froms & Elements" => "الجداول، النماذج والعناصر",
     "Admin" => "المشرف",
     "LISTE" => "قائمة",
-    "condidates" => "المرشحون",
     "nom" => "الاسم",
     "etablissement" => "المؤسسة",
     "mod-sup" => "تعديل / حذف",

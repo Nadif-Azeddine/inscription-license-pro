@@ -42,10 +42,10 @@ Route::group(['middleware' => 'set-locale'], function () {
 
     });
 });
-
-
-
-
-
 require_once('admin.php');
+
+
+
+
+
 
