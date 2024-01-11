@@ -12,15 +12,13 @@ class Inscription extends Model
     protected $fillable = [
         'licence_id',
         'candidature_id',
-        'ordre'
+        'order',
     ];
-    public function licence_id(){
-        return $this->belongsTo(Licence::class);
+    public function license(){
+        return $this->belongsTo(Licence::class, 'licence_id');
     }
-    public function anneun(){
-        return $this->belongsTo(Anneun::class);
-    }
+  
     public function candidature(){
-        return $this->belongsTo(Candidature::class);
+        return $this->belongsTo(Candidature::class, 'candidature_id');
     }
 }

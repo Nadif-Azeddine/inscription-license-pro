@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('candidature_id');
             $table->integer('order');
             $table->timestamps();
-            $table->foreign('licence_id')->references('id')->on('licence')->onDelete('cascade');
+            $table->foreign('licence_id')->references('id')->on('license')->onDelete('cascade');
             $table->foreign('candidature_id')->references('id')->on('candidature')->onDelete('cascade');
         });
 

@@ -17,7 +17,8 @@
     <link href="{{ URL('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL('/css/styles.css') }}" rel="stylesheet">
     <link href="{{ URL('/fontawesome/css/all.min.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
     <link rel="stylesheet" href="{{ URL('/assets/vendor/themify-icons/themify-icons.css') }}">
 
     <link rel="stylesheet" href="{{ URL('/assets/vendor/charts-c3/plugin.css') }}" />

@@ -38,6 +38,8 @@ Route::group(['prefix' => '/inscription', 'middleware' => ['auth']], function ()
 
     // choix
     Route::get('/choix', [CandidatController::class, 'choix'])->middleware('is_bacpd')->name('choix');
+    Route::post('/choix', [CandidatController::class, 'saveChoix'])->middleware('is_bacpd')->name('save-choix');
+    
 });
 
 require_once('admin.php');

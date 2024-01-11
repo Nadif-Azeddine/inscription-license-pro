@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('license', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('departement_id');
+            $table->unsignedBigInteger('specialite_id');
             $table->string('nom_licence');
             $table->timestamps();
             $table->foreign('departement_id')->references('id')->on('departement')->onDelete('cascade');
+            $table->foreign('specialite_id')->references('id')->on('specialite')->onDelete('cascade');
         });
 
         Schema::enableForeignKeyConstraints();

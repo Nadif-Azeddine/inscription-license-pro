@@ -13,6 +13,7 @@ use App\Models\Candidat;
 use App\Models\Candidature;
 use App\Models\Diplome;
 use App\Models\Etablissement;
+use App\Models\Inscription;
 use App\Models\Licence;
 use App\Models\Specialite;
 use App\Models\Ville;
@@ -159,9 +160,52 @@ class CandidatController extends Controller
         return view(
             'inscription.choix',
             [
-                'specialites' => $licenses,
+                'licenses' => $licenses,
             ]
         );
+    }
+
+    // save choix
+    public function saveChoix(Request $request)
+    {
+        try {
+            $validated = $request->validate([
+                'choix1' => 'required',
+                'choix2' => 'required',
+                'choix3' => 'required',
+            ]);
+
+            $candidature = Candidature::updateOrCreate(
+                ['candidat_id' => Auth::user()->candidat->id],
+                [
+                    'candidat_id' => Auth::user()->candidat->id,
+                    'anneeun' => date('Y').'-'.(date('Y')+1),
+                    'etat' => 'en cours',
+                ]
+            );
+
+            if ($candidature) {
+               Inscription::create([
+                    'candidature_id' => $candidature->id,
+                    'licence_id' => $validated['choix1'],
+                    'order' => '1',
+                ]);
+               Inscription::create([
+                    'candidature_id' => $candidature->id,
+                    'licence_id' => $validated['choix2'],
+                    'order' => '2',
+                ]);
+               Inscription::create([
+                    'candidature_id' => $candidature->id,
+                    'licence_id' => $validated['choix3'],
+                    'order' => '3',
+                ]);
+                return redirect()->back()->with('success', 'Vos choix sont enregistrés avec succès');
+            }
+
+        } catch (\Exception $e) {
+            return dd($e->getMessage());
+        }
     }
 
 }

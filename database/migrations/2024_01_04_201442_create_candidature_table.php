@@ -15,14 +15,10 @@ return new class extends Migration
         Schema::create('candidature', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('candidat_id');
-            $table->unsignedBigInteger('bac_id');
-            $table->unsignedBigInteger('bacpd_id');
             $table->string('anneeun');
             $table->string('etat');
             $table->timestamps();
             $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
-            $table->foreign('bac_id')->references('id')->on('bac')->onDelete('cascade');
-            $table->foreign('bacpd_id')->references('id')->on('bacpd')->onDelete('cascade');
             $table->foreign('anneeun')->references('anneeun')->on('annee_univ')->onDelete('cascade');
         
         });
