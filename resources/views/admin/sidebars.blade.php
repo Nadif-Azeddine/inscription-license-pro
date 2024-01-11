@@ -113,12 +113,13 @@
                 <li class="active">
                     <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>Tabels</span></a>
                     <ul>
-                        <li><a href="table-basic.html">condidature</a></li>
+                        <li><a href="{{ route('condidats') }}">condidates</a></li>
                         <li class="active"><a href="{{ route('licences') }}">Licence</a></li>
                         <li><a href="{{ route('XMLlicences') }}">XML-Licence</a></li>
                         <li><a href="table-editable.html">dossier-condidature</a></li>
                         <li><a href="{{ route('Users') }}">Users</a></li>
                         <li><a href="{{ route('XMLUsers') }}">XML-Users</a></li>
+                        <li><a href="{{ route('inscriptions') }}">inscriptions</a></li>
                         <li><a href="{{ route('XMLinscriptions') }}">XMLinscriptions</a></li>
                        
                     </ul>

@@ -16,8 +16,8 @@ class Licence extends Model
         'order',
     
     ];
-    public function candidatures(){
-        return $this->belongsToMany(Candidature::class, 'inscription');
+    public function inscription(){
+        return $this->belongsToMany(Inscription::class);
     }
     public function departement(){
         return $this->belongsTo(Departement::class,'departement_id');

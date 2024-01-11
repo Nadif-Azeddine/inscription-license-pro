@@ -3,12 +3,16 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Candidat;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Candidature;
 use App\Models\Licence;
 use App\Models\Specialite;
 use App\Models\Departement;
+use App\Models\Etablissement;
+use App\Models\Inscription;
+use App\Models\Ville;
 
 class AdminController extends Controller
 {
@@ -71,5 +75,15 @@ class AdminController extends Controller
         $User->delete();
 
         return redirect()->back()->with('success', 'Licence deleted successfully');
+    }
+    public function ListCondudates()
+    {
+        $candidates = Candidat::all();
+        return view('admin.listeCondidates', compact( 'candidates'));
+    }
+    public function ListInsription()
+    {
+        $Inscriptions=Inscription::all();
+        return view('admin.listeInscription', compact('Inscriptions'));
     }
 }

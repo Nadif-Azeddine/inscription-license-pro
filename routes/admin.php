@@ -24,6 +24,8 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::get('/fetch-specialites', [AdminController::class, 'fetchSpecialites'])->name('fetchSpecialites');
     Route::get('/licences', [AdminController::class, 'Listlicence'])->name('licences');
+    Route::get('/condidat', [AdminController::class, 'ListCondudates'])->name('condidats');
+    Route::get('/inscriptions', [AdminController::class, 'ListInsription'])->name('inscriptions');
     Route::delete('/licences/{id}', [AdminController::class, 'supprimerLicence'])->name('supprimerLicence');
     Route::delete('/users/{id}', [AdminController::class, 'supprimerUser'])->name('supprimerUsers');
     Route::get('/users', [AdminController::class, 'listUsers'])->name('Users');
