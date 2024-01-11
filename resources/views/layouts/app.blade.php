@@ -81,7 +81,9 @@
     </div>
 </body>
 {{-- core --}}
-<script></script>
+<script>
+    
+</script>
 @yield('scripts')
 
 </html>
