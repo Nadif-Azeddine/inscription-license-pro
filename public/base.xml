@@ -3,7 +3,15 @@
 
   <!-- Users -->
   <users>
-    <user id="1" password="userpass" role="candidat" username="john_doe" nom="john_doe" prenom="john_doe">
+    
+       
+     <user id="3" password="userpass" role="candidat" username="yahya" nom="yahya" prenom="yahya">
+      <diplome>123</diplome>
+      <tel>123456789</tel>
+      <email>john.doe@example.com</email>
+      <date_naissance>2000-01-01T12:00:00</date_naissance>
+    </user>
+       <user id="3" password="userpass" role="candidat" username="john_doe" nom="john_doe" prenom="john_doe">
       <diplome>123</diplome>
       <tel>123456789</tel>
       <email>john.doe@example.com</email>
@@ -19,6 +27,11 @@
       <etablissement>456</etablissement>
       <departement_nom>Computer Science</departement_nom>
     </department>
+     <department>
+      <id>2</id>
+      <etablissement>456</etablissement>
+      <departement_nom>Computer devops</departement_nom>
+    </department>
     <!-- Add more department entries as needed -->
   </departments>
 
@@ -27,23 +40,23 @@
     <filiere id="f1" name="Computer Engineering">
       <department>1</department>
     </filiere>
-    <!-- Add more filiere entries as needed -->
   </filieres>
 
   <!-- Matieres -->
   <matieres>
-    <matiere filiere="f1" id="m1" name="Programming Fundamentals" />
-    <!-- Add more matiere entries as needed -->
+    <matiere filiere="f1" id="m1" name="Programming Fundamentals"/>
   </matieres>
 
   <!-- Inscriptions -->
   <inscriptions>
-    <inscription status="accepted">
-      <user>1</user>
-      <licence>789</licence>
-    </inscription>
+    
+       
+     
+      
     <!-- Add more inscription entries as needed -->
-  </inscriptions>
+  
+  <inscription status="In progress"><id>1</id><user>3</user><licence>2</licence><order>3</order></inscription>
+  <inscription status="Accepted"><id>2</id><user>3</user><licence>1</licence><order>1</order></inscription></inscriptions>
 
   <!-- Diplomes -->
   <diplomes>
@@ -103,6 +116,10 @@
       <id>789</id>
       <libelle>Software Engineering</libelle>
     </specialite>
+    <specialite>
+      <id>1</id>
+      <libelle>Software devoloper</libelle>
+    </specialite>
     <!-- Add more specialite entries as needed -->
   </specialites>
 
@@ -114,35 +131,15 @@
     </bacoption>
     <!-- Add more bacoption entries as needed -->
   </bacoptions>
-
-  <!-- Licences -->
   <licences>
-    <licence>
-      <id>789</id>
-      <departement>1</departement>
-      <specialite>789</specialite>
-      <nom_licence>Computer Engineering</nom_licence>
+  
+   
+<licence><id>1</id><departement>1</departement><specialite>789</specialite><nom_licence>Computer Science</nom_licence>
+</licence>
+<licence><id>2</id><departement>2</departement><specialite>1</specialite><nom_licence>Computer devoloper</nom_licence></licence>
+</licences>
 
-    </licence>
-      <licence>
-      <id>7889</id>
-      <departement>1</departement>
-      <specialite>789</specialite>
-      <nom_licence>Computer Engineering</nom_licence>
  
-    </licence>
-    <!-- Add more licence entries as needed -->
-  </licences>
-
-  <!-- Departments -->
-  <departments>
-    <department>
-      <id>1</id>
-      <etablissement>456</etablissement>
-      <departement_nom>Computer Science</departement_nom>
-    </department>
-    <!-- Add more department entries as needed -->
-  </departments>
 
   <!-- Establishments -->
   <establishments>

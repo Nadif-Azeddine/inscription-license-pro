@@ -27,8 +27,14 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth']], function () {
     Route::delete('/licences/{id}', [AdminController::class, 'supprimerLicence'])->name('supprimerLicence');
     Route::delete('/users/{id}', [AdminController::class, 'supprimerUser'])->name('supprimerUsers');
     Route::get('/users', [AdminController::class, 'listUsers'])->name('Users');
-    Route::put('/licences/{id}', [AdminController::class, 'updateLicence'])->name('updateLicence');
     Route::get('/xmlusers', [XMLController::class, 'listUsers'])->name('XMLUsers');
+    Route::put('/licences/{id}', [AdminController::class, 'updateLicence'])->name('updateLicence');
+    Route::delete('/xmlusers/{id}', [XMLController::class, 'deleteUser'])->name('delete-XMLUsers');
     Route::get('/xmllicence', [XMLController::class, 'Listlicence'])->name('XMLlicences');
+    Route::put('/xmllicence/{licenceId}', [XMLController::class, 'editLicence'])->name('update-XMLlicence');
+    Route::delete('/xmllicence/{licenceId}', [XMLController::class, 'deletelicence'])->name('delete-XMLlicence');
+    Route::get('/XMLinscriptions', [XMLController::class, 'listInscriptions'])->name('XMLinscriptions');
+    Route::delete('/XMLinscriptions/{id}', [XMLController::class, 'deleteinscription'])->name('delete-deleteinscription');
+    Route::put('/XMLinscriptions/{id}', [XMLController::class, 'editinscription'])->name('update-inscription');
 });
 
