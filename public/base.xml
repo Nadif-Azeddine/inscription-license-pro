@@ -6,14 +6,16 @@
     
        
      
-       <user id="3" password="userpass" role="candidat" username="john_doe" nom="john_doe" prenom="john_doe">
+       
+     <user id="5" password="userpass" role="candidat" username="yahya" nom="yahya" prenom="yahya">
       <diplome>123</diplome>
       <tel>123456789</tel>
       <email>john.doe@example.com</email>
       <date_naissance>2000-01-01T12:00:00</date_naissance>
     </user>
+         
     <!-- Add more user entries as needed -->
-  </users>
+  <user id="1" username="doe1" nom="doe1" prenom="doe1"><tel>10101010</tel><email>john.doe@example.com1</email><date_naissance>2000-01-01T12:00:01</date_naissance></user></users>
 
   <!-- Departments -->
   <departments>
@@ -46,12 +48,8 @@
   <inscriptions>
     
        
-     
-      
-    <!-- Add more inscription entries as needed -->
   
-  <inscription status="In progress"><id>1</id><user>3</user><licence>2</licence><order>3</order></inscription>
-  <inscription status="Accepted"><id>2</id><user>3</user><licence>1</licence><order>1</order></inscription></inscriptions>
+    <inscription status="Accepted"><id>2</id><user>5</user><licence>1</licence><order>4</order></inscription></inscriptions>
 
   <!-- Diplomes -->
   <diplomes>

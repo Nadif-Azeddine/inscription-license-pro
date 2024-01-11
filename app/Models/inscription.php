@@ -13,6 +13,7 @@ class Inscription extends Model
         'licence_id',
         'candidature_id',
         'order',
+        'etat',
     ];
     public function license(){
         return $this->belongsTo(Licence::class, 'licence_id');

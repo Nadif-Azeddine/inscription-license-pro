@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('candidat_id');
             $table->string('anneeun');
-            $table->string('etat');
             $table->timestamps();
             $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
             $table->foreign('anneeun')->references('anneeun')->on('annee_univ')->onDelete('cascade');

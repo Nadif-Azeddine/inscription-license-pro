@@ -35,9 +35,57 @@
                                             <td>{{ __($User->date_naissance->__toString()) }}</td>
                                        
                                             <td>                                     
-                                                <a href="#" class="icon-link pen-icon" data-toggle="tooltip" title="Edit">
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                </a>
+                                                <i class="fas fa-edit" data-toggle="modal" data-target="#editModal{{ $User['id'] }}" style="cursor: pointer;"></i>
+                                            
+                                                <!-- Bootstrap Modal -->
+                                                <div class="modal fade" id="editModal{{ $User['id']}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $User->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="editModalLabel{{ $User['id'] }}">Edit user</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <!-- Your edit form or input fields go here -->
+                                                                <form method="POST" action="{{ route('update-XMLUsers', ['id' => $User['id']]) }}">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                    
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldName">username:</label>
+                                                                        <input type="text" name="editFieldUsername" value="{{$User['username']->__toString() }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldName">nom:</label>
+                                                                        <input type="text" name="editFieldNom" value="{{ $User['nom']->__toString() }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldName">prenom:</label>
+                                                                        <input type="text" name="editFieldPrenom" value="{{  $User['prenom']->__toString()}}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldName">email:</label>
+                                                                        <input type="email" name="editFieldEmail" value="{{ $User->email }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldName">tel:</label>
+                                                                        <input type="tel" name="editFieldtel" value="{{ $User->tel }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldName">date_naissance:</label>
+                                                                        <input type="datetime" name="editFieldDate_naissance" value="{{ $User->date_naissance }}" class="form-control" required>
+                                                                    </div>
+                                                                   
+                                                                    
+                                    
+                                                                    <button type="submit" class="btn btn-success btn-sm">Save Changes</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <form id="deleteForm" action="{{ route('delete-XMLUsers', ['id' => $User['id']]) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')

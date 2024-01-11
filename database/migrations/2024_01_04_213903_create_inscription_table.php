@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('licence_id');
             $table->unsignedBigInteger('candidature_id');
             $table->integer('order');
+            $table->string('etat')->default('in progress');
             $table->timestamps();
             $table->foreign('licence_id')->references('id')->on('license')->onDelete('cascade');
             $table->foreign('candidature_id')->references('id')->on('candidature')->onDelete('cascade');

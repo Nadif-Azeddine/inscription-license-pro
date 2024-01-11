@@ -150,4 +150,27 @@ class XMLController extends Controller
                 }
             }
 
+            public function editUser(Request $request, $id)
+            {
+                $users = $this->xml->xpath("/university/users")[0];
+                $userToupdate = $users->xpath("/university/users/user[@id='$id']");
+            
+                if (!empty($userToupdate)) {
+                    $domNode = dom_import_simplexml($userToupdate[0]);
+                    $domNode->parentNode->removeChild($domNode);
+                    $newuser = $users->addChild('user');
+                    $newuser->addAttribute('id', $id);
+                    $newuser->addAttribute('username', $request->input('editFieldUsername'));
+                    $newuser->addAttribute('nom', $request->input('editFieldNom'));
+                    $newuser->addAttribute('prenom', $request->input('editFieldPrenom'));
+                    $newuser->addChild('tel', $request->input('editFieldtel'));
+                    $newuser->addChild('email', $request->input('editFieldEmail'));
+                    $newuser->addChild('date_naissance', $request->input('editFieldDate_naissance'));
+                    $this->xml->asXML($this->xmlFile);
+                    return redirect()->back()->with('success', 'user updated successfully');
+                } else {
+                    return redirect()->back()->with('error', 'user with id='.$id.' not found');
+                }
+            }
+
 }

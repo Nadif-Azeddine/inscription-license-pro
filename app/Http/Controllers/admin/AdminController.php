@@ -84,6 +84,39 @@ class AdminController extends Controller
     public function ListInsription()
     {
         $Inscriptions=Inscription::all();
-        return view('admin.listeInscription', compact('Inscriptions'));
+        $Users=User::all();
+        $licences=Licence::all();
+        return view('admin.listeInscription', compact('Inscriptions','Users','licences'));
+    }
+    public function updateInscription(Request $request, $id)
+    {
+ 
+        $validatedData = $request->validate([
+            'editFieldorder' => 'required',
+            'editFieldUser' => 'required|exists:users,id',
+            'editFieldLicence'=>'required|exists:license,id',
+            'editFieldStatus' => 'required',
+        ]);
+        $inscription = Inscription::findOrFail($id);
+
+        $inscription->update([
+            'order' => $validatedData['editFieldorder'],
+            'candidature_id' => $validatedData['editFieldUser'],
+            'licence_id' => $validatedData['editFieldLicence'],
+            'etat'=>$validatedData['editFieldStatus'],
+        ]);
+
+        return redirect()->back()->with('success', 'Inscription updated successfully');
+    }
+    public function DELETEInscription($id)
+    {
+        $inscription = Inscription::findOrFail($id);
+        if (!$inscription) {
+            return redirect()->back()->with('error', 'Inscription not found');
+        }
+        $inscription->delete();
+      
+
+        return redirect()->back()->with('success', 'Inscription deleted successfully');
     }
 }
