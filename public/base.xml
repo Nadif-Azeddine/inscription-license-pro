@@ -54,12 +54,9 @@
      
       
     <!-- Add more inscription entries as needed -->
-  <inscription status="accepted">
-  <id>2</id>
-  <user>3</user>
-  <licence>1</licence>
-  </inscription>
-  <inscription status="In progress"><id>1</id><user>3</user><licence>2</licence></inscription></inscriptions>
+  
+  <inscription status="In progress"><id>1</id><user>3</user><licence>2</licence><order>3</order></inscription>
+  <inscription status="Accepted"><id>2</id><user>3</user><licence>1</licence><order>1</order></inscription></inscriptions>
 
   <!-- Diplomes -->
   <diplomes>

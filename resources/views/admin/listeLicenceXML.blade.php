@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('Liste Licence') }} </h2>
+                            <h2> {{ __('Liste XMLLicence') }} </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">

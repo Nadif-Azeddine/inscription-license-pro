@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('Liste inscription') }} </h2>
+                            <h2> {{ __('Liste XMLinscription') }} </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -16,6 +16,7 @@
                                         <tr>
                                             <th>{{ __('user') }}</th>
                                             <th>{{ __('licnece') }}</th>
+                                            <th>{{ __('order') }}</th>
                                             <th>{{ __('status') }}</th>
                                             <th>{{ __('mod/sup') }}</th>
                                         </tr>
@@ -42,6 +43,7 @@
                                                     @endif
                                                 @endforeach
                                             </td>
+                                            <td>{{ __($inscription->order->__toString()) }}</td>
                                             <td>{{ __($inscription['status']->__toString()) }}</td>
                                        
                                             <td>                                     
@@ -73,7 +75,10 @@
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
-                                                                
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldOrder">order:</label>
+                                                                        <input type="number" name="editFieldOrder" value="{{ $inscription->order }}" class="form-control" required>
+                                                                    </div>
                                                                     <div class="form-group">
                                                                         <label for="editFieldStatus">Status:</label>
                                                                         <select id="editFieldStatus" name="editFieldStatus" class="form-control" required>

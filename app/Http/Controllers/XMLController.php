@@ -58,6 +58,7 @@ class XMLController extends Controller
                     $newLicense->addChild('departement', $request->input('editFieldDepartement'));
                     $newLicense->addChild('specialite', $request->input('editFieldSpecialite'));
                     $newLicense->addChild('nom_licence', $request->input('editFieldName'));
+                    
                     $this->xml->asXML($this->xmlFile);
                     return redirect()->back()->with('success', 'Licence updated successfully');
                 } else {
@@ -141,6 +142,7 @@ class XMLController extends Controller
                     $newinscriptions->addChild('user', $request->input('editFieldUser'));
                     $newinscriptions->addChild('licence', $request->input('editFieldLicence'));
                     $newinscriptions->addAttribute('status', $request->input('editFieldStatus'));
+                    $newinscriptions->addChild('order', $request->input('editFieldOrder'));
                     $this->xml->asXML($this->xmlFile);
                     return redirect()->back()->with('success', 'Licence updated successfully');
                 } else {
