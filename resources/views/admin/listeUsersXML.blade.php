@@ -20,7 +20,7 @@
                                             <th>{{ __('email') }}</th>
                                             <th>{{ __('tel') }}</th>
                                             <th>{{ __('date_naissance') }}</th>
-                                            <th {{ __('modd/supp') }}</th>
+                                            <th>{{ __('modd/supp') }}</th>
                                         </tr>
                                     </thead>
                         
@@ -33,13 +33,18 @@
                                             <td>{{ __($User->email->__toString()) }}</td>
                                             <td>{{ __($User->tel->__toString())}}</td>
                                             <td>{{ __($User->date_naissance->__toString()) }}</td>
+                                       
                                             <td>                                     
                                                 <a href="#" class="icon-link pen-icon" data-toggle="tooltip" title="Edit">
                                                     <i class="fas fa-pencil-alt"></i>
                                                 </a>
-                                                <a href="#" class="icon-link trash-icon" data-toggle="tooltip" title="Delete">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
+                                                <form id="deleteForm" action="{{ route('delete-XMLUsers', ['id' => $User['id']]) }}" method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="button" class="icon-link trash-icon" data-toggle="tooltip" title="Delete" onclick="confirmDelete()">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </form>
                                 </td>
                                         </tr>
                                         @endforeach
@@ -53,7 +58,7 @@
        
         </div>
  
-
+       
 @section('scripts')
 @endsection
 
