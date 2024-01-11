@@ -51,7 +51,7 @@
                                     </a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> 
                     @auth
                         <div class="dropdown" style="">
                             <div class="avatar mx-2" type="button" id="triggerId" data-bs-toggle="dropdown"
