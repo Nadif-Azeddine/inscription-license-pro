@@ -91,11 +91,11 @@
                             <div class="modal-body py-4">
                                 <div class="mb-4">
                                     <h2 class="fw-500 text-success">{{__('Tous est enregistes')}}</h2>
-                                    <h6 class="fw-500">{{__('Tous les informations ')}}</h6>
+                                    <h6 class="fw-500">{{__('Tous les informations sont enregistres avec successs')}}</h6>
                                 </div>
                                 <div class="row justify-content-around">
-                                    <a href="{{ route('login') }}"
-                                        class="btn btn-success rounded-pill col-8 text-white ">Continue Inscription</a>
+                                    <button onclick="closeModal()" data-bs-dismiss="modal"
+                                        class="btn btn-success rounded-pill col-8 text-white "></button>
                                 </div>
                             </div>
                         </div>

@@ -5,12 +5,7 @@
   <users>
     
        
-     <user id="3" password="userpass" role="candidat" username="yahya" nom="yahya" prenom="yahya">
-      <diplome>123</diplome>
-      <tel>123456789</tel>
-      <email>john.doe@example.com</email>
-      <date_naissance>2000-01-01T12:00:00</date_naissance>
-    </user>
+     
        <user id="3" password="userpass" role="candidat" username="john_doe" nom="john_doe" prenom="john_doe">
       <diplome>123</diplome>
       <tel>123456789</tel>

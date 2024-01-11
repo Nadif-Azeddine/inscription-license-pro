@@ -48,6 +48,7 @@ class User extends Authenticatable
     ];
 
 
+
     public function roles()
     {
         return $this->belongsToMany(Role::class, 'role_users');
@@ -62,4 +63,23 @@ class User extends Authenticatable
     public function cordinateur(){
         return $this->hasOne(Cordinateur::class);
     }
+
+    public function isCandidat(){
+        return $this->candidat()->exists();
+    }
+
+    public function isCordinateur(){
+        return $this->cordinateur()->exists();
+    }
+
+    public function isAdmin(){
+        return $this->roles()->where('role_id', 1)->exists();
+    }
+
+    public function hasPermission²($permission){
+        return $this->roles->permissions->contains('nom', $permission);
+    }
 }
+
+
+
