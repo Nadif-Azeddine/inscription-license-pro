@@ -15,21 +15,26 @@
             <a class="fw-bold" href="{{ Auth::check() ? route('bac') : '#' }}">3</a>
         </div>
         <div style="z-index: 3"
-        class="circle {{ Auth::check() && Auth::user()->candidat && Auth::user()->candidat->bacpd ? 'passed' : '' }} {{ Route::currentRouteName() === 'bacpd' ? 'current shadow' : '' }} ">
-        <a class="fw-bold" href="{{ Auth::check() ? route('bacpd') : '#' }}">4</a>
+            class="circle {{ Auth::check() && Auth::user()->candidat && Auth::user()->candidat->bacpd ? 'passed' : '' }} {{ Route::currentRouteName() === 'bacpd' ? 'current shadow' : '' }} ">
+            <a class="fw-bold" href="{{ Auth::check() ? route('bacpd') : '#' }}">4</a>
+        </div>
+        <div style="z-index: 3"
+            class="circle {{ Auth::check() && Auth::user()->candidat && Auth::user()->candidat->candidature && count(Auth::user()->candidat->candidature->licenses) > 0 ? 'passed' : '' }} {{ Route::currentRouteName() === 'choix' ? 'current shadow' : '' }} ">
+            <a class="fw-bold" href="{{ Auth::check() ? route('choix') : '#' }}">5</a>
+        </div>
     </div>
-        
-    </div>
-    @if (Auth::user()->candidat && Auth::user()->candidat->bacpd)
-    <div class="position-absolute top-0 start-0 bg-info"
-        style="height: 7px; z-index: 0; width:100%"></div>       
+   
+    @if ( Auth::check() && Auth::user()->candidat && Auth::user()->candidat->candidature && count(Auth::user()->candidat->candidature->licenses) > 0)
+        <div class="position-absolute top-0 start-0 bg-info" style="height: 7px; z-index: 0; width:100%"></div>
     @endif
-    @if (Auth::user()->candidat && Auth::user()->candidat->bac)
-    <div class="position-absolute top-0 start-0 bg-info"
-    style="height: 7px; z-index: 0; width:66.6666%"></div> 
+    @if (Auth::check() && Auth::user()->candidat && Auth::user()->candidat->bacpd)
+        <div class="position-absolute top-0 start-0 bg-info" style="height: 7px; z-index: 0; width:75%"></div>
     @endif
-    @if (Auth::user()->candidat)
-    <div class="position-absolute top-0 start-0 bg-info"
-    style="height: 7px; z-index: 0; width:33.3333%"></div> 
+    @if (Auth::check() && Auth::user()->candidat && Auth::user()->candidat->bac)
+        <div class="position-absolute top-0 start-0 bg-info" style="height: 7px; z-index: 0; width:50%"></div>
     @endif
+    @if (Auth::check() && Auth::user()->candidat)
+        <div class="position-absolute top-0 start-0 bg-info" style="height: 7px; z-index: 0; width:25%"></div>
+    @endif
+
 </div>

@@ -24,10 +24,8 @@ return new class extends Migration
             $table->integer('classment_pa');
             $table->integer('nb_etudiant_da');
             $table->integer('classment_da');
-            $table->date('date_reussite_pa');
-            $table->date('date_reussite_da');
-            $table->date('date_obt');
-            $table->string('mention');
+            $table->string('date_reussite_pa');
+            $table->string('date_reussite_da');
             $table->timestamps();
             $table->foreign('candidat_id')->references('id')->on('candidat')->onDelete('cascade');
             $table->foreign('diplome_id')->references('id')->on('diplome')->onDelete('cascade');

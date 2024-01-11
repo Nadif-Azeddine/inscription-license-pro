@@ -8,23 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Licence extends Model
 {
     use HasFactory;
-    protected $table = 'licence';
+    protected $table = 'license';
     protected $fillable = [
         'departement_id',
         'nom_licence',
+        'specialite_id',
         'order',
     
     ];
-    public function inscriptions(){
-        return $this->hasMany(Inscription::class);
+    public function candidatures(){
+        return $this->belongsToMany(Candidature::class, 'inscription');
     }
     public function departement(){
-        return $this->belongsTo(Departement::class);
+        return $this->belongsTo(Departement::class,'departement_id');
     }
     public function specialite(){
-        return $this->hasOne(Specialite::class);
+        return $this->belongsTo(Specialite::class,'specialite_id');
     }
-    public function anneun(){
-        return $this->belongsTo(Anneun::class);
-    }
+    
 }

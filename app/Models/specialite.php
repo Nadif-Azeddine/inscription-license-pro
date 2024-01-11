@@ -13,10 +13,10 @@ class Specialite extends Model
         'libelle',
         
     ];
-    public function licence(){
-        return $this->hasMany(Licence::class);
+    public function licences(){
+        return $this->hasMany(Licence::class, 'specialite_id');
     }
-    public function typebpd(){
-        return $this->belongsToMany(TypeBpd::class);
+    public function bacpds(){
+        return $this->hasMany(BacPd::class, 'specialite_id');
     }
 }

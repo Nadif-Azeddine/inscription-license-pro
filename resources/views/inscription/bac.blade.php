@@ -9,7 +9,7 @@
             <div class="col-md-8 mb-3 mt-2">
                 <div class="px-4 py-3 pb-5">
                     <div class="col-12 mb-3 text-center d-flex flex-column justify-content-center align-items-center">
-                        <span style="font-size: 3em;"><i class="fa text-primary fa-user" aria-hidden="true"></i></span>
+                        <img src="{{URL('/images/bac.svg')}}" class="mt-3" width="60px" height="60px" alt="">
                     </div>
                     <div class="d-flex blury-card flex-column justify-content-center align-items-center  ">
                         <form method="POST" class="col-12" action="{{ route('save_bac') }}">

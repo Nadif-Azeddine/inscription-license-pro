@@ -17,7 +17,7 @@ class Departement extends Model
       
     ];
     public function cordinateur(){
-        return $this->hasMany(cordinateur::class);
+        return $this->hasMany(cordinateur::class, "departement_id");
     }
     public function etablissement(){
         return $this->belongsTo(etablissement::class);

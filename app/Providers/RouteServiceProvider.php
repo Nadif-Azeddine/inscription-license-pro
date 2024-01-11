@@ -20,6 +20,7 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/';
     public const CANDIDAT = '/inscription/candidat';
     public const BAC = '/inscription/bac';
+    public const BACPD = '/inscription/bacpd';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.

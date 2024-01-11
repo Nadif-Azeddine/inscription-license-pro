@@ -9,12 +9,11 @@ class Permission extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','display_name','description'];
+    protected $fillable = ['nom','description'];
 
     public function scopeSearch($query, $search)
     {
-        return $query->where('name', 'like', '%'.$search.'%')
-            ->orWhere('display_name', 'like', '%'.$search.'%')
+        return $query->where('nom', 'like', '%'.$search.'%')
             ->orWhere('description', 'like', '%'.$search.'%');
     }
 

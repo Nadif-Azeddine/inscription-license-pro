@@ -19,9 +19,6 @@ class Diplome extends Model
         return $this->belongsToMany(Etablissement::class);
     }
     public function bacpd(){
-        return $this->hasOne(BacPd::class);
-    }
-    public function bac(){
-        return $this->hasOne(BacPd::class);
+        return $this->hasMany(BacPd::class, 'diplome_id');
     }
 }

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="your_schema_location.xsd">
+
+  <!-- Users -->
+  <users>
+    
+       
+     <user id="3" password="userpass" role="candidat" username="yahya" nom="yahya" prenom="yahya">
+      <diplome>123</diplome>
+      <tel>123456789</tel>
+      <email>john.doe@example.com</email>
+      <date_naissance>2000-01-01T12:00:00</date_naissance>
+    </user>
+       <user id="3" password="userpass" role="candidat" username="john_doe" nom="john_doe" prenom="john_doe">
+      <diplome>123</diplome>
+      <tel>123456789</tel>
+      <email>john.doe@example.com</email>
+      <date_naissance>2000-01-01T12:00:00</date_naissance>
+    </user>
+    <!-- Add more user entries as needed -->
+  </users>
+
+  <!-- Departments -->
+  <departments>
+    <department>
+      <id>1</id>
+      <etablissement>456</etablissement>
+      <departement_nom>Computer Science</departement_nom>
+    </department>
+     <department>
+      <id>2</id>
+      <etablissement>456</etablissement>
+      <departement_nom>Computer devops</departement_nom>
+    </department>
+    <!-- Add more department entries as needed -->
+  </departments>
+
+  <!-- Filieres -->
+  <filieres>
+    <filiere id="f1" name="Computer Engineering">
+      <department>1</department>
+    </filiere>
+  </filieres>
+
+  <!-- Matieres -->
+  <matieres>
+    <matiere filiere="f1" id="m1" name="Programming Fundamentals"/>
+  </matieres>
+
+  <!-- Inscriptions -->
+  <inscriptions>
+    
+       
+     
+      
+    <!-- Add more inscription entries as needed -->
+  
+  <inscription status="In progress"><id>1</id><user>3</user><licence>2</licence><order>3</order></inscription>
+  <inscription status="Accepted"><id>2</id><user>3</user><licence>1</licence><order>1</order></inscription></inscriptions>
+
+  <!-- Diplomes -->
+  <diplomes>
+    <diplome>
+      <id>123</id>
+      <etablissement>456</etablissement>
+      <bacpd>789</bacpd>
+      <bac>987</bac>
+      <nom_diplome>Bachelor's Degree</nom_diplome>
+      <date_obt>2022-01-01T12:00:00</date_obt>
+    </diplome>
+    <!-- Add more diplome entries as needed -->
+  </diplomes>
+
+  <!-- Bacpds -->
+  <bacpds>
+    <bacpd>
+      <id>789</id>
+      <typebpd>456</typebpd>
+      <Moy_s1>80</Moy_s1>
+      <Moy_s2>85</Moy_s2>
+      <Moy_s3>75</Moy_s3>
+      <Moy_s4>90</Moy_s4>
+      <Date_obt>2021-01-01</Date_obt>
+      <Mention>Excellent</Mention>
+    </bacpd>
+    <!-- Add more bacpd entries as needed -->
+  </bacpds>
+
+  <!-- Bacs -->
+  <bacs>
+    <bac>
+      <id>987</id>
+      <bacoption>654</bacoption>
+      <Moy_national>82</Moy_national>
+      <Moy_regional>78</Moy_regional>
+      <Moy_general>80</Moy_general>
+      <Date_obt>2020-01-01</Date_obt>
+      <Mention>Good</Mention>
+    </bac>
+    <!-- Add more bac entries as needed -->
+  </bacs>
+
+  <!-- Typebpds -->
+  <typebpds>
+    <typebpd>
+      <id>456</id>
+      <specialite>789</specialite>
+      <libelle>Computer Science</libelle>
+    </typebpd>
+    <!-- Add more typebpd entries as needed -->
+  </typebpds>
+
+  <!-- Specialites -->
+  <specialites>
+    <specialite>
+      <id>789</id>
+      <libelle>Software Engineering</libelle>
+    </specialite>
+    <specialite>
+      <id>1</id>
+      <libelle>Software devoloper</libelle>
+    </specialite>
+    <!-- Add more specialite entries as needed -->
+  </specialites>
+
+  <!-- Bacoptions -->
+  <bacoptions>
+    <bacoption>
+      <id>654</id>
+      <option>Physics</option>
+    </bacoption>
+    <!-- Add more bacoption entries as needed -->
+  </bacoptions>
+  <licences>
+  
+   
+<licence><id>1</id><departement>1</departement><specialite>789</specialite><nom_licence>Computer Science</nom_licence>
+</licence>
+<licence><id>2</id><departement>2</departement><specialite>1</specialite><nom_licence>Computer devoloper</nom_licence></licence>
+</licences>
+
+ 
+
+  <!-- Establishments -->
+  <establishments>
+    <establishment>
+      <id>456</id>
+      <ville>789</ville>
+      <nom_etablissement>University of Example</nom_etablissement>
+    </establishment>
+    <!-- Add more establishment entries as needed -->
+  </establishments>
+
+</university>

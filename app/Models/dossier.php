@@ -19,6 +19,6 @@ class Dossier extends Model
         return $this->hasOne(DossierPy::class);
     }
     public function candidature(){
-        return $this->belongsTo(Candidature::class);
+        return $this->belongsTo(Candidature::class, 'candidature_id');
     }
 }

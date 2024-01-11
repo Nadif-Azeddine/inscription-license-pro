@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ __("Inscription LP 2024") }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link rel="icon" href="{{ URL('/images/logo.png') }}" type="image/x-icon">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link href="{{ URL('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL('/css/styles.css') }}" rel="stylesheet">
@@ -29,7 +30,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white border">
             <div class="px-2 px-sm-4 col-12  d-flex justify-content-between align-items-center">
-                <a class="navbar-brand text-3xl" href="{{ url('/') }}">
+                <a class="navbar-brand text-3xl fw-500" href="{{ url('/') }}">
                     {{ __('License Pro') }}
                 </a>
 
@@ -48,9 +49,9 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="avatar mx-2">
-                    </div>
                     @auth
+                    <div class="avatar mx-2" style="background: url('/images/person.jpg')">
+                    </div>
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                             <button type="submit"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
