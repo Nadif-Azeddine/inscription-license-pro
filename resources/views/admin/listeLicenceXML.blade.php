@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('Liste XMLLicence') }} </h2>
+                            <h2> @lang('admin.ListeXMLLicence') </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -15,10 +15,13 @@
                                     <thead>
                                         <tr>
                                            
-                                            <th>{{ __('Name') }}</th>
-                                            <th>{{ __('specialite') }}</th>
-                                            <th>{{ __('departement') }}</th>
-                                            <th>{{ __('modd/supp/ajot') }}</th>
+                                           
+                                            <th>@lang('admin.nom')</th>
+                                          
+                                            <th>@lang('admin.specialite')</th>
+                                            <th>@lang('admin.departement')</th>
+                                            
+                                            <th>@lang('admin.mod-sup')</th>
                                         </tr>
                                     </thead>
                         
@@ -71,12 +74,12 @@
                                                                             @method('PUT')
                                             
                                                                             <div class="form-group">
-                                                                                <label for="editFieldName">Name:</label>
+                                                                                <label for="editFieldName">@lang('admin.nom'):</label>
                                                                                 <input type="text" name="editFieldName" value="{{ $licence->nom_licence }}" class="form-control" required>
                                                                             </div>
                                                                     
                                                                             <div class="form-group">
-                                                                                <label for="editFieldSpecialite">Specialité:</label>
+                                                                                <label for="editFieldSpecialite">@lang('admin.specialite'):</label>
                                                                                 <select id="editFieldSpecialite" name="editFieldSpecialite" class="form-control" required>
                                                                                     @foreach($specialites as $specialite)
                                                                                         <option value="{{ $specialite->id }}" {{ old('editFieldSpecialite', $licence->specialite_id ?? '') == $specialite->id ? 'selected' : '' }}>
@@ -87,7 +90,7 @@
                                                                             </div>
                                                                           
                                                                             <div class="form-group">
-                                                                                <label for="editFieldDepartement">Département:</label>
+                                                                                <label for="editFieldDepartement">@lang('admin.departement'):</label>
                                                                                 <select id="editFieldDepartement" name="editFieldDepartement" class="form-control" required>
                                                                                     @foreach($departments as $departement)
                                                                                         <option value="{{ $departement->id }}" {{ old('editFieldDepartement', $licence->departement_id ?? '') == $departement->id ? 'selected' : '' }}>

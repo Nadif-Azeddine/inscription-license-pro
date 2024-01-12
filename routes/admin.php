@@ -26,10 +26,14 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'set-locale']],
     Route::get('/licences', [AdminController::class, 'Listlicence'])->name('licences');
     Route::get('/condidat', [AdminController::class, 'ListCondudates'])->name('condidats');
     Route::get('/inscriptions', [AdminController::class, 'ListInsription'])->name('inscriptions');
+    Route::get('/inscriptionsDossier', [AdminController::class, 'ListCondudatesDossier'])->name('inscriptionsDossier');
     Route::put('/inscriptions/{id}', [AdminController::class, 'updateInscription'])->name('updateInscription');
+    Route::put('/inscriptionsDossier/{id}', [AdminController::class, 'updateDossier'])->name('updateInscriptionDossier');
+    Route::put('/condidat/{id}', [AdminController::class, 'updatecandidate'])->name('updatecondidat');
     Route::delete('/inscriptions/{id}', [AdminController::class, 'DELETEInscription'])->name('delete-inscription');
     Route::delete('/licences/{id}', [AdminController::class, 'supprimerLicence'])->name('supprimerLicence');
     Route::delete('/users/{id}', [AdminController::class, 'supprimerUser'])->name('supprimerUsers');
+    Route::delete('/condidat/{id}', [AdminController::class, 'DELETEcondudates'])->name('delete-condidat');
     Route::get('/users', [AdminController::class, 'listUsers'])->name('Users');
     Route::get('/xmlusers', [XMLController::class, 'listUsers'])->name('XMLUsers');
     Route::put('/licences/{id}', [AdminController::class, 'updateLicence'])->name('updateLicence');

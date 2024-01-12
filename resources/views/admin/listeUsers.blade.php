@@ -7,20 +7,21 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> @lang('admin.Liste Users') </h2>
+                            <h2> @lang('admin.ListeUsers') </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('Name') }}</th>
-                                            <th>{{ __('prenom') }}</th>
-                                            <th>{{ __('email') }}</th>
-                                            <th>{{ __('tel') }}</th>
-                                            <th>{{ __('genre') }}</th>
-                                            <th>{{ __('date_naissance') }}</th>
-                                            <th>    {{ __('modd/supp') }}</th>
+                                            <th> @lang('admin.nom')</th>
+                                            <th>@lang('admin.prenom')</th>
+                                            <th>@lang('admin.email')</th>
+                                            <th>@lang('admin.tel')</th>
+                                            <th>@lang('admin.genre')</th>
+                                            <th>@lang('admin.date_naissance')</th>
+                                            <th>@lang('admin.mod-sup')</th>
+                                         
                                         </tr>
                                     </thead>
                         

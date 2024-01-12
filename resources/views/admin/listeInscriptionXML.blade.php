@@ -7,18 +7,18 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('Liste XMLinscription') }} </h2>
+                            <h2> @lang('admin.ListeXMLinscription') </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('user') }}</th>
-                                            <th>{{ __('licence') }}</th>
-                                            <th>{{ __('order') }}</th>
-                                            <th>{{ __('status') }}</th>
-                                            <th>{{ __('mod/sup') }}</th>
+                                            <th>@lang('admin.user')</th>
+                                            <th>@lang('admin.Licence')</th>
+                                            <th>@lang('admin.order')</th>
+                                            <th>@lang('admin.status')</th>
+                                            <th>@lang('admin.mod-sup')</th>
                                         </tr>
                                     </thead>
                         
@@ -66,7 +66,7 @@
                                                                     @method('PUT')
                                                                 
                                                                     <div class="form-group">
-                                                                        <label for="editFieldUser">Licence:</label>
+                                                                        <label for="editFieldUser">@lang('admin.user'):</label>
                                                                         <select id="editFieldUser" name="editFieldUser" class="form-control" required>
                                                                             @foreach($users as $user)
                                                                                 <option value="{{ $user['id'] }}" {{ old('editFieldUser', $inscription->user ?? '') == $user['id'] ? 'selected' : '' }}>
@@ -76,11 +76,11 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldOrder">order:</label>
+                                                                        <label for="editFieldOrder">@lang('admin.order'):</label>
                                                                         <input type="number" name="editFieldOrder" value="{{ $inscription->order }}" class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldStatus">Status:</label>
+                                                                        <label for="editFieldStatus">@lang('admin.status'):</label>
                                                                         <select id="editFieldStatus" name="editFieldStatus" class="form-control" required>
                                                                             <option value="Accepted" {{ old('editFieldStatus', $inscription->status ?? '') == 'accepted' ? 'selected' : '' }}>
                                                                                 Accepted
@@ -94,7 +94,7 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                    <label for="editFieldLicence">Licence:</label>
+                                                                    <label for="editFieldLicence">@lang('admin.Licence'):</label>
                                                                     <select id="editFieldLicence" name="editFieldLicence" class="form-control" required>
                                                                         @foreach($licences as $licence)
                                                                             <option value="{{ $licence->id }}" {{ old('editFieldLicence', $inscription->licence ?? '') == $licence->id ? 'selected' : '' }}>

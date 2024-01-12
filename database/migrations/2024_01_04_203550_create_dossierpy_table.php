@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('dossierpy', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('dossier_id');
-            $table->string('CIN'); 
-            $table->string('Bac'); 
-            $table->string('diplome'); 
-            $table->string('relevé_ann1'); 
-            $table->string('relevé_ann2'); 
+            $table->boolean('CIN')->default(false);
+            $table->boolean('bac')->default(false);
+            $table->boolean('diplome')->default(false);
+            $table->boolean('relevé_ann1')->default(false);
+            $table->boolean('relevé_ann2')->default(false); 
             $table->timestamps();
             $table->foreign('dossier_id')->references('id')->on('dossier')->onDelete('cascade');
         });

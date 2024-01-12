@@ -12,6 +12,8 @@ use App\Models\BacPd;
 use App\Models\Candidat;
 use App\Models\Candidature;
 use App\Models\Diplome;
+use App\Models\Dossier;
+use App\Models\DossierPy;
 use App\Models\Etablissement;
 use App\Models\Inscription;
 use App\Models\Licence;
@@ -147,7 +149,7 @@ class CandidatController extends Controller
     // choix
     public function choix()
     {
-        $licenses = Licence::all();
+        $licenses = Licence::all()->unique("nom_licence");
         return view(
             'inscription.choix',
             [
@@ -185,11 +187,17 @@ class CandidatController extends Controller
                     'candidature_id' => $candidature->id,
                     'licence_id' => $validated['choix2'],
                     'order' => '2',
-                ]);
+                ]); 
                Inscription::create([
                     'candidature_id' => $candidature->id,
                     'licence_id' => $validated['choix3'],
                     'order' => '3',
+                ]);
+                $dossier = Dossier::create([
+                    'candidature_id' => $candidature->id,
+                ]);
+                DossierPy::create([
+                    'dossier_id' => $dossier->id,
                 ]);
                 return redirect()->back()->with('success', 'Vos choix sont enregistrés avec succès');
             }

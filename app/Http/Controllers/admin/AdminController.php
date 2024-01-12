@@ -20,11 +20,7 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
-    public function listCandidature()
-    {
-        $condidatures = Candidature::all();
-        return view('admin.Candidature', compact('condidatures'));
-    }
+    
     public function listUsers()
     {
         $Users = User::all();
@@ -79,7 +75,55 @@ class AdminController extends Controller
     public function ListCondudates()
     {
         $candidates = Candidat::all();
-        return view('admin.listeCondidates', compact( 'candidates'));
+        $Villes = Ville::all();
+        $Etablissements = Etablissement::all();
+        $Users = User::all();
+        return view('admin.listeCondidates', compact( 'candidates','Etablissements','Villes','Users'));
+    }
+    public function ListCondudatesDossier()
+    {
+        $Inscriptions = Inscription::where('etat', 'accepted')->get();
+        $Users=User::all();
+        $licences=Licence::all();
+        return view('admin.listeDossierInscription', compact('Inscriptions','Users','licences'));
+    
+    }
+    public function DELETEcondudates($id)
+    {
+        $candidates = Candidat::findOrFail($id);
+        if (!$candidates) {
+            return redirect()->back()->with('error', 'candidates not found');
+        }
+        $candidates->delete();
+      
+
+        return redirect()->back()->with('success', 'candidates deleted successfully');
+    }
+    public function updatecandidate(Request $request, $id)
+    {
+ 
+        $validatedData = $request->validate([
+            
+            'editFieldUser' => 'required|exists:users,id',
+            'editFieldVille'=>'required|exists:Ville,id',
+            'editFieldEtablissement' => 'required|exists:Etablissement,id',
+            'editFieldCIN' => 'required',
+            'editFieldCNE' => 'required',
+            'editFieldNum_apoge' => 'required',
+
+        ]);
+        $candidate = Candidat::findOrFail($id);
+
+        $candidate->update([
+            'user_id' => $validatedData['editFieldUser'],
+            'ville_id' => $validatedData['editFieldVille'],
+            'etablissement_id' => $validatedData['editFieldEtablissement'],
+           'CNE' =>$validatedData['editFieldCIN'],
+           "CIN"=>$validatedData['editFieldCNE'],
+           "num_apoge" =>$validatedData['editFieldNum_apoge'],
+        ]);
+
+        return redirect()->back()->with('success', 'Inscription updated successfully');
     }
     public function ListInsription()
     {
@@ -104,6 +148,39 @@ class AdminController extends Controller
             'candidature_id' => $validatedData['editFieldUser'],
             'licence_id' => $validatedData['editFieldLicence'],
             'etat'=>$validatedData['editFieldStatus'],
+        ]);
+
+        return redirect()->back()->with('success', 'Inscription updated successfully');
+    }
+    public function updateDossier(Request $request, $id)
+    {
+ 
+        $validatedData = $request->validate([
+            'editFieldorder' => 'required',
+            'editFieldUser' => 'required|exists:users,id',
+            'editFieldLicence'=>'required|exists:license,id',
+            'editFieldStatus' => 'required',
+            'editFieldBAC' => 'required|in:0,1',
+            'editFieldcin' => 'required|in:0,1',
+            'editFieldiplome' => 'required|in:0,1',
+            'editFieldreleve1' => 'required|in:0,1',
+            'editFieldreleve2' => 'required|in:0,1',
+        ]);
+        $inscription = Inscription::findOrFail($id);
+
+        $inscription->update([
+            'order' => $validatedData['editFieldorder'],
+            'candidature_id' => $validatedData['editFieldUser'],
+            'licence_id' => $validatedData['editFieldLicence'],
+            'etat'=>$validatedData['editFieldStatus'],
+        ]);
+        $dossierPy = $inscription->candidature->dossier->dossierpy;
+        $dossierPy->update([
+            'Bac' => $validatedData['editFieldBAC'],
+            'CIN' => $validatedData['editFieldcin'],
+            'diplome' => $validatedData['editFieldiplome'],
+            'relevé_ann1' => $validatedData['editFieldreleve1'],
+            'relevé_ann2' => $validatedData['editFieldreleve2'],
         ]);
 
         return redirect()->back()->with('success', 'Inscription updated successfully');

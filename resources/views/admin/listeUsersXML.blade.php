@@ -7,20 +7,21 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="header">
-                            <h2> {{ __('Liste XMLUsers') }} </h2>
+                            <h2> @lang('admin.ListeXMLUsers') </h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>{{ __('Username') }}</th>
-                                            <th>{{ __('Name') }}</th>
-                                            <th>{{ __('prenom') }}</th>
-                                            <th>{{ __('email') }}</th>
-                                            <th>{{ __('tel') }}</th>
-                                            <th>{{ __('date_naissance') }}</th>
-                                            <th>{{ __('modd/supp') }}</th>
+                                        
+                                            <th> @lang('admin.username')</th>
+                                            <th> @lang('admin.nom')</th>
+                                            <th>@lang('admin.prenom')</th>
+                                            <th>@lang('admin.email')</th>
+                                            <th>@lang('admin.tel')</th>
+                                            <th>@lang('admin.date_naissance')</th>
+                                            <th>@lang('admin.mod-sup')</th>
                                         </tr>
                                     </thead>
                         
@@ -54,27 +55,27 @@
                                                                     @method('PUT')
                                     
                                                                     <div class="form-group">
-                                                                        <label for="editFieldName">username:</label>
+                                                                        <label for="editFieldName">@lang('admin.username'):</label>
                                                                         <input type="text" name="editFieldUsername" value="{{$User['username']->__toString() }}" class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldName">nom:</label>
+                                                                        <label for="editFieldName"> @lang('admin.nom'):</label>
                                                                         <input type="text" name="editFieldNom" value="{{ $User['nom']->__toString() }}" class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldName">prenom:</label>
+                                                                        <label for="editFieldName">@lang('admin.prenom'):</label>
                                                                         <input type="text" name="editFieldPrenom" value="{{  $User['prenom']->__toString()}}" class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldName">email:</label>
+                                                                        <label for="editFieldName">@lang('admin.email'):</label>
                                                                         <input type="email" name="editFieldEmail" value="{{ $User->email }}" class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldName">tel:</label>
+                                                                        <label for="editFieldName">@lang('admin.tel'):</label>
                                                                         <input type="tel" name="editFieldtel" value="{{ $User->tel }}" class="form-control" required>
                                                                     </div>
                                                                     <div class="form-group">
-                                                                        <label for="editFieldName">date_naissance:</label>
+                                                                        <label for="editFieldName">@lang('admin.date_naissance'):</label>
                                                                         <input type="datetime" name="editFieldDate_naissance" value="{{ $User->date_naissance }}" class="form-control" required>
                                                                     </div>
                                                                    

@@ -2,55 +2,55 @@
 
 @section('table')
 
-        <div class="container-fluid">            
-            <div class="row clearfix">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2> @lang('welcome.LP')</h2>
-                        </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Name {{Session::get('local')}}</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>mod/sup</th>
-                                        </tr>
-                                    </thead>
-                        
-                                    <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                 
-                                            <td>                                     
-                                                            <a href="#" class="icon-link pen-icon" data-toggle="tooltip" title="Edit">
-                                                                <i class="fas fa-pencil-alt"></i>
-                                                            </a>
-                                                            <a href="#" class="icon-link trash-icon" data-toggle="tooltip" title="Delete">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </a>
-                                            </td>
-                                        </tr>
-        
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-       
-        </div>
-       
+<style>
+    body {
+        background-color: #20232a;
+        color: #61dafb;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .welcome-container {
+        text-align: center;
+    }
+
+    .welcome-text {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .futuristic {
+        font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #61dafb;
+    }
+
+    .highlight {
+        color: #f8f8f2;
+    }
+
+    .admin-icon {
+        font-size: 4em;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="welcome-container">
+    <div class="welcome-text futuristic">
+        Welcome to <span class="highlight">Admin</span> Space
+    </div>
+    <div class="admin-icon">
+        <span>&#x1F9D1;</span> <!-- You can replace this with your admin icon or logo -->
+    </div>
+</div>
+</body>
 
 @section('scripts')
 @endsection

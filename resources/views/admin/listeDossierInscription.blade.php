@@ -18,7 +18,13 @@
                                             <th>@lang('admin.Licence')</th>
                                             <th>@lang('admin.order')</th>
                                             <th>@lang('admin.status')</th>
+                                            <th>@lang('admin.bac')</th>
+                                            <th>@lang('admin.CIN')</th>
+                                            <th>@lang('admin.diplome')</th>
+                                            <th>@lang('admin.relv1')</th>
+                                            <th>@lang('admin.relv2')</th>
                                             <th>@lang('admin.mod-sup')</th>
+                                           
                                         </tr>
                                     </thead>
                         
@@ -34,7 +40,57 @@
                                               </td>
                                             <td>
                                               {{__($inscription->order)}}   </td>
-                                            <td>   {{__($inscription->etat)}} </td>                                  
+                                            <td>   {{__($inscription->etat)}} </td>  
+                                            
+                                            <td>
+                    
+                                                @if($inscription->candidature->dossier->dossierpy->bac)
+                                               <img src="{{ asset('images/verifier.jpg') }}" class="logo" width="30" height="30">
+                                            @else
+                                               <img src="{{ asset('images/bouton-x.jpg') }}" class="logo" width="30" height="30">
+                                            @endif
+                                
+                                            </td>     
+                                            <td>
+                    
+                                                @if($inscription->candidature->dossier->dossierpy->CIN)
+                                               <img src="{{ asset('images/verifier.jpg') }}" class="logo" width="30" height="30">
+                                            @else
+                                               <img src="{{ asset('images/bouton-x.jpg') }}" class="logo" width="30" height="30">
+                                            @endif
+                                
+                                            </td>  
+                                            <td>
+                    
+                                                @if($inscription->candidature->dossier->dossierpy->diplome)
+                                               <img src="{{ asset('images/verifier.jpg') }}" class="logo" width="30" height="30">
+                                            @else
+                                               <img src="{{ asset('images/bouton-x.jpg') }}" class="logo" width="30" height="30">
+                                            @endif
+                                
+                                            </td>  
+                                            <td>
+                    
+                                                @if($inscription->candidature->dossier->dossierpy->relevé_ann1)
+                                               <img src="{{ asset('images/verifier.jpg') }}" class="logo" width="30" height="30">
+                                            @else
+                                               <img src="{{ asset('images/bouton-x.jpg') }}" class="logo" width="30" height="30">
+                                            @endif
+                                
+                                            </td>  
+                                            <td>
+                    
+                                                @if($inscription->candidature->dossier->dossierpy->relevé_ann2)
+                                               <img src="{{ asset('images/verifier.jpg') }}" class="logo" width="30" height="30">
+                                            @else
+                                               <img src="{{ asset('images/bouton-x.jpg') }}" class="logo" width="30" height="30">
+                                            @endif
+                                
+                                            </td>  
+                                            
+                                          
+                                
+                                                                    
                                              <td>
 
                                                 <i class="fas fa-edit" data-toggle="modal" data-target="#editModal{{ $inscription->id }}" style="cursor: pointer;"></i>
@@ -51,7 +107,7 @@
                                                                     </div>
                                                                     <div class="modal-body">
                                                                         <!-- Your edit form or input fields go here -->
-                                                                        <form method="POST" action="{{ route('updateInscription', ['id' => $inscription->id]) }}">
+                                                                        <form method="POST" action="{{ route('updateInscriptionDossier', ['id' => $inscription->id]) }}">
                                                                             @csrf
                                                                             @method('PUT')
                                             
@@ -96,6 +152,41 @@
                                                                                 </select>
                                                                             </div>
                                                                             
+                                                                            <div class="form-group">
+                                                                                <label for="editFieldBAC">@lang('admin.bac'):</label>
+                                                                                <select name="editFieldBAC" class="form-control" required>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->bac == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->bac == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="editFieldcin">@lang('admin.CIN'):</label>
+                                                                                <select name="editFieldcin" class="form-control" required>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->CIN == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->CIN == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="editFieldiplome">@lang('admin.diplome'):</label>
+                                                                                <select name="editFieldiplome" class="form-control" required>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->diplome == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->diplome == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="editFieldreleve1">@lang('admin.relv1'):</label>
+                                                                                <select name="editFieldreleve1" class="form-control" required>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->relevé_ann1 == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->relevé_ann1 == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="form-group">
+                                                                                <label for="editFieldreleve2">@lang('admin.relv2'):</label>
+                                                                                <select name="editFieldreleve2" class="form-control" required>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->relevé_ann2 == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->relevé_ann2 == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                </select>
+                                                                            </div>
                                                                     
                                             
                                                                             <button type="submit" class="btn btn-success btn-sm">Save Changes</button>

@@ -1,6 +1,6 @@
 <?php 
 return [
-    "fr" => "Arabic",
-    "ar" => "French",
+    "ar" => "Arabic",
+    "fr" => "French",
     "en" => "English",
 ];

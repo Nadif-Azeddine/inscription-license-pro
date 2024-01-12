@@ -90,26 +90,26 @@
             </div>
             <ul id="main-menu" class="metismenu">
                 <li class="g_heading">Main</li>
-                <li><a href=""><i class="ti-home"></i><span>Dashboard</span></a></li>
-                <li class="g_heading">Tables, Froms & Elements</li>
+                <li><a href=""><i class="ti-home"></i><span>@lang('admin.Dashboard')</span></a></li>
+                <li class="g_heading">@lang('admin.TablesFromsElements')</li>
              
                 <li class="active">
-                    <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>Tabels</span></a>
+                    <a href="javascript:void(0)" class="has-arrow"><i class="ti-view-list"></i><span>@lang('admin.Tabels')</span></a>
                     <ul>
-                        <li><a href="{{ route('condidats') }}">condidates</a></li>
-                        <li class="active"><a href="{{ route('licences') }}">@lang('admin.licnece')</a></li>
-                        <li><a href="{{ route('XMLlicences') }}">XML-Licence</a></li>
-                        <li><a href="table-editable.html">dossier-condidature</a></li>
+                        <li><a href="{{ route('condidats') }}">@lang('admin.condidates')</a></li>
+                        <li class="active"><a href="{{ route('licences') }}">@lang('admin.Licence')</a></li>
+                        <li><a href="{{ route('XMLlicences') }}">@lang('admin.XML-Licence')</a></li>
+                        <li><a href="{{ route('inscriptionsDossier') }}">@lang('admin.dossier-condidature')</a></li>
                         <li><a href="{{ route('Users') }}">@lang('admin.Users')</a></li>
-                        <li><a href="{{ route('XMLUsers') }}">XML-Users</a></li>
-                        <li><a href="{{ route('inscriptions') }}">inscriptions</a></li>
-                        <li><a href="{{ route('XMLinscriptions') }}">XMLinscriptions</a></li>
+                        <li><a href="{{ route('XMLUsers') }}">@lang('admin.ListeXMLUsers')</a></li>
+                        <li><a href="{{ route('inscriptions') }}">@lang('admin.Listeinscription')</a></li>
+                        <li><a href="{{ route('XMLinscriptions') }}">@lang('admin.ListeXMLinscription')</a></li>
                        
                     </ul>
                 </li>
-                <li class="g_heading">Users</li>
-                <li><a href="page-profile.html"><i class="ti-user"></i><span>Profile</span></a></li>
-                <li><a href="{{ route('Users') }}"><i class="ti-menu-alt"></i><span>list-admins</span></a></li>
+                <li class="g_heading">@lang('admin.Users')</li>
+                <li><a href="page-profile.html"><i class="ti-user"></i><span>@lang('admin.Profile')</span></a></li>
+                <li><a href="{{ route('Users') }}"><i class="ti-menu-alt"></i><span>@lang('admin.list-admins')</span></a></li>
                
                
         </nav>
@@ -372,54 +372,8 @@
 
     <div class="page">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="javascript:void(0);">Data Table</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-align-justify"></i>
-            </button>
+            <a class="navbar-brand" href="javascript:void(0);">@lang('admin.Data-Table')</a>
             
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">                        
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Application</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Inbox</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Calendar</a>
-                        <a class="dropdown-item" href="javascript:void(0);">TaskBoard</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Chat App</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Contacts</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Users</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Profile</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Timeline</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Invoices</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:void(0);">Stater page</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="javascript:void(0);">Pricing</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Search</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Testimonials</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Map</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Icon</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Carousel</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Gallery</a>
-                        <a class="dropdown-item" href="javascript:void(0);">Lookup</a>
-                    </div>
-                </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <button type="button" class="btn btn-primary">{{ __('add') }}</button>
-                    <a href="https://themeforest.net/user/wrraptheme/portfolio" title="Portfolio" class="btn btn-success ml-2">Portfolio</a>
-                </form>
-            </div>
         </nav>
         
         <div id="app">
@@ -465,9 +419,9 @@
 </style>
 
 <div class="confirmation-dialog" id="confirmationDialog">
-    <h2>Are you sure you want to delete this ?</h2>
-    <button class="cancel" onclick="cancelDelete()">Cancel</button>
-    <button class="confirm" onclick="submitDelete()">Delete</button>
+    <h2>@lang('admin.confirmation-dialog')</h2>
+    <button class="cancel" onclick="cancelDelete()">@lang('admin.cancel')</button>
+    <button class="confirm" onclick="submitDelete()">@lang('admin.delete')</button>
 </div>
 
 <script>
