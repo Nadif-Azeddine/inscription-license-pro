@@ -8,6 +8,58 @@
                     <div class="card">
                         <div class="header">
                             <h2> @lang('admin.ListeXMLLicence') </h2>
+                            <i class="fas fa-plus-circle" data-toggle="modal" data-target="#editModal" style="font-size: 24px;color: green;"></i>
+                                            
+                                                        <!-- Bootstrap Modal -->
+                                                        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="editModalLabel">@lang('admin.Edit-Licence-xml')</h5>
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <!-- Your edit form or input fields go here -->
+                                                                        <form method="POST" action="{{ route('create-XMLlicence') }}">
+                                                                            @csrf
+                                                            
+                                            
+                                                                            <div class="form-group">
+                                                                                <label for="CreatLicenceName">@lang('admin.nom'):</label>
+                                                                                <input type="text" name="CreatLicenceName" value="" class="form-control" required>
+                                                                            </div>
+                                                                    
+                                                                            <div class="form-group">
+                                                                                <label for="CreatLicenceSpecialite">@lang('admin.specialite'):</label>
+                                                                                <select id="CreatLicenceSpecialite" name="CreatLicenceSpecialite" class="form-control" required>
+                                                                                    @foreach($specialites as $specialite)
+                                                                                        <option value="{{ $specialite->id }}" >
+                                                                                            {{ $specialite->libelle }}
+                                                                                        </option>
+                                                                                    @endforeach
+                                                                                </select>
+                                                                            </div>
+                                                                          
+                                                                            <div class="form-group">
+                                                                                <label for="CreatLicenceDepartement">@lang('admin.departement'):</label>
+                                                                                <select id="CreatLicenceDepartement" name="CreatLicenceDepartement" class="form-control" required>
+                                                                                    @foreach($departments as $departement)
+                                                                                        <option value="{{ $departement->id }}">
+                                                                                            {{ $departement->departement_nom }}
+                                                                                        </option>
+                                                                                    @endforeach
+                                                                                </select>
+                                                                            </div>
+                                                                            
+                                            
+                                                                            <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -62,7 +114,7 @@
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="editModalLabel{{ $licence->is }}">Edit Licence</h5>
+                                                                        <h5 class="modal-title" id="editModalLabel{{ $licence->is }}">@lang('admin.Edit-Licence-xml')</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
@@ -101,7 +153,7 @@
                                                                             </div>
                                                                             
                                             
-                                                                            <button type="submit" class="btn btn-success btn-sm">Save Changes</button>
+                                                                            <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
                                                                         </form>
                                                                     </div>
                                                                 </div>

@@ -53,5 +53,17 @@ return [
     "relv2"=> "Academic Record for the Second Year" ,
     "bac"=> "baccalaureate",
     "diplome"=> "Diploma",
+    "Male"=> "Male",
+    "Female"=> "Female",
+    "Deposit"=> "Deposited",
+    "Not-deposited"=> "Not deposited",
+    "Edit-inscription"=> "Edit inscription",
+    "Edit-candidate"=> "Edit candidate",
+    "Edit-Dossierinscription"=> "Edit registration form",
+    "Edit-inscription-xml"=> "Edit registration XML",
+    "Edit-Licence"=> "Edit license",
+    "Edit-Licence-xml"=> "Edit license XML",
+    "Edit-user"=> "Edit user",
+    "Edit-user-xml"=> "Edit user XML",
     
 ];

@@ -105,7 +105,7 @@
                                                                     </div>
                                                             
                                     
-                                                                    <button type="submit" class="btn btn-success btn-sm">Save Changes</button>
+                                                                    <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
                                                                 </form>
                                                             </div>
                                                         </div>

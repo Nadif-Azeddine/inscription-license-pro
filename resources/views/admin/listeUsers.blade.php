@@ -42,9 +42,61 @@
                                                         <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
-                                                <a href="#" class="icon-link trash-icon" data-toggle="tooltip" title="Delete">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a>
+                                                <i class="fas fa-edit" data-toggle="modal" data-target="#editModal{{ $User->id }}" style="cursor: pointer;"></i>
+                                            
+                                                <!-- Bootstrap Modal -->
+                                                <div class="modal fade" id="editModal{{ $User->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $User->id }}" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="editModalLabel{{ $User['id'] }}">@lang('admin.Edit-user')</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <!-- Your edit form or input fields go here -->
+                                                                <form method="POST" action="{{ route('update-users', ['id' => $User->id]) }}">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                    
+                                                                   
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldNom"> @lang('admin.nom'):</label>
+                                                                        <input type="text" name="editFieldNom" value="{{ $User->nom }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldPrenom">@lang('admin.prenom'):</label>
+                                                                        <input type="text" name="editFieldPrenom" value="{{  $User->prenom}}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldEmail">@lang('admin.email'):</label>
+                                                                        <input type="email" name="editFieldEmail" value="{{ $User->email }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldtel">@lang('admin.tel'):</label>
+                                                                        <input type="tel" name="editFieldtel" value="{{ $User->tel }}" class="form-control" required>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldgenre">@lang('admin.genre'):</label>
+                                                                        <select name="editFieldgenre" class="form-control" required>
+                                                                            <option value="H" {{ $User->genre == 'H' ? 'selected' : '' }}>@lang('admin.Male')</option>
+                                                                            <option value="F" {{ $User->genre == 'F' ? 'selected' : '' }}>@lang('admin.Female')</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="editFieldDate_naissance">@lang('admin.date_naissance'):</label>
+                                                                        <input type="datetime" name="editFieldDate_naissance" value="{{ $User->date_naissance }}" class="form-control" required>
+                                                                    </div>
+                                                                   
+                                                                    
+                                    
+                                                                    <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                 </td>
                                         </tr>
                                         @endforeach

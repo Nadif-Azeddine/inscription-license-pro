@@ -35,6 +35,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'set-locale']],
     Route::delete('/users/{id}', [AdminController::class, 'supprimerUser'])->name('supprimerUsers');
     Route::delete('/condidat/{id}', [AdminController::class, 'DELETEcondudates'])->name('delete-condidat');
     Route::get('/users', [AdminController::class, 'listUsers'])->name('Users');
+    Route::put('/users/{id}', [AdminController::class, 'updateUser'])->name('update-users');
     Route::get('/xmlusers', [XMLController::class, 'listUsers'])->name('XMLUsers');
     Route::put('/licences/{id}', [AdminController::class, 'updateLicence'])->name('updateLicence');
     Route::put('/xmlusers/{id}', [XMLController::class, 'editUser'])->name('update-XMLUsers');
@@ -45,5 +46,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'set-locale']],
     Route::get('/XMLinscriptions', [XMLController::class, 'listInscriptions'])->name('XMLinscriptions');
     Route::delete('/XMLinscriptions/{id}', [XMLController::class, 'deleteinscription'])->name('delete-deleteinscription');
     Route::put('/XMLinscriptions/{id}', [XMLController::class, 'editinscription'])->name('update-inscription');
+    Route::post('/XMLinscriptions', [XMLController::class, 'creatinscription'])->name('create-XMLinscription');
+    Route::post('/xmllicence', [XMLController::class, 'createLicence'])->name('create-XMLlicence');
 });
 

@@ -44,7 +44,7 @@
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="editModalLabel{{ $inscription->id }}">Edit inscription</h5>
+                                                                        <h5 class="modal-title" id="editModalLabel{{ $inscription->id }}">@lang('admin.Edit-inscription')</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
@@ -98,7 +98,7 @@
                                                                             
                                                                     
                                             
-                                                                            <button type="submit" class="btn btn-success btn-sm">Save Changes</button>
+                                                                            <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
                                                                         </form>
                                                                     </div>
                                                                 </div>

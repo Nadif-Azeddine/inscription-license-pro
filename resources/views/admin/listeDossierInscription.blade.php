@@ -100,7 +100,7 @@
                                                             <div class="modal-dialog" role="document">
                                                                 <div class="modal-content">
                                                                     <div class="modal-header">
-                                                                        <h5 class="modal-title" id="editModalLabel{{ $inscription->id }}">Edit inscription</h5>
+                                                                        <h5 class="modal-title" id="editModalLabel{{ $inscription->id }}">@lang('admin.Edit-inscription-xml')</h5>
                                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
@@ -155,41 +155,41 @@
                                                                             <div class="form-group">
                                                                                 <label for="editFieldBAC">@lang('admin.bac'):</label>
                                                                                 <select name="editFieldBAC" class="form-control" required>
-                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->bac == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
-                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->bac == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->bac == 0 ? 'selected' : '' }}>@lang('admin.Not-deposited')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->bac == 1 ? 'selected' : '' }}>@lang('admin.Deposit')</option>
                                                                                 </select>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="editFieldcin">@lang('admin.CIN'):</label>
                                                                                 <select name="editFieldcin" class="form-control" required>
-                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->CIN == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
-                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->CIN == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->CIN == 0 ? 'selected' : '' }}>@lang('admin.Not-deposited')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->CIN == 1 ? 'selected' : '' }}>@lang('admin.Deposit')</option>
                                                                                 </select>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="editFieldiplome">@lang('admin.diplome'):</label>
                                                                                 <select name="editFieldiplome" class="form-control" required>
-                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->diplome == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
-                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->diplome == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->diplome == 0 ? 'selected' : '' }}>@lang('admin.Not-deposited')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->diplome == 1 ? 'selected' : '' }}>@lang('admin.Deposit')</option>
                                                                                 </select>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="editFieldreleve1">@lang('admin.relv1'):</label>
                                                                                 <select name="editFieldreleve1" class="form-control" required>
-                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->relevé_ann1 == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
-                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->relevé_ann1 == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->relevé_ann1 == 0 ? 'selected' : '' }}>@lang('admin.Not-deposited')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->relevé_ann1 == 1 ? 'selected' : '' }}>@lang('admin.Deposit')</option>
                                                                                 </select>
                                                                             </div>
                                                                             <div class="form-group">
                                                                                 <label for="editFieldreleve2">@lang('admin.relv2'):</label>
                                                                                 <select name="editFieldreleve2" class="form-control" required>
-                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->relevé_ann2 == 0 ? 'selected' : '' }}>@lang('Non déposé')</option>
-                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->relevé_ann2 == 1 ? 'selected' : '' }}>@lang('Déposé')</option>
+                                                                                    <option value="0" {{ $inscription->candidature->dossier->dossierpy->relevé_ann2 == 0 ? 'selected' : '' }}>@lang('admin.Not-deposited')</option>
+                                                                                    <option value="1" {{ $inscription->candidature->dossier->dossierpy->relevé_ann2 == 1 ? 'selected' : '' }}>@lang('admin.Deposit')</option>
                                                                                 </select>
                                                                             </div>
                                                                     
                                             
-                                                                            <button type="submit" class="btn btn-success btn-sm">Save Changes</button>
+                                                                            <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
                                                                         </form>
                                                                     </div>
                                                                 </div>

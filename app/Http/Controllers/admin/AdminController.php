@@ -26,6 +26,29 @@ class AdminController extends Controller
         $Users = User::all();
         return view('admin.listeUsers', compact('Users'));
     }
+    public function updateUser(Request $request, $id)
+    {
+
+        $request->validate([
+            'editFieldNom' => 'required|string',
+            'editFieldPrenom' => 'required',
+            'editFieldEmail' => 'required',
+            'editFieldtel' => 'required',
+            'editFieldDate_naissance' => 'required',
+        ]);
+        $User = User::find($id);
+        if (!$User) {
+            return redirect()->back()->with('error', 'Licence did not Updates successfully');
+        }
+        $User->nom = $request->input('editFieldNom');
+        $User->prenom = $request->input('editFieldPrenom');
+        $User->email = $request->input('editFieldEmail');
+        $User->tel = $request->input('editFieldtel');
+        $User->genre = $request->input('editFieldgenre');
+        $User->date_naissance = $request->input('editFieldDate_naissance');
+        $User->save();
+        return redirect()->back()->with('success', 'Licence Updates successfully');
+    }
     public function Listlicence()
     {
         $licences = Licence::all();

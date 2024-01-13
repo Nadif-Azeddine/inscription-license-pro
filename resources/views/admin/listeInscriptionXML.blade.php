@@ -8,6 +8,73 @@
                     <div class="card">
                         <div class="header">
                             <h2> @lang('admin.ListeXMLinscription') </h2>
+                            
+                        
+                            <i class="fas fa-plus-circle" data-toggle="modal" data-target="#editModal" style="font-size: 24px;color: green;"></i>
+                                            
+                            <!-- Bootstrap Modal -->
+                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="editModalLabel">@lang('admin.Edit-inscription-xml')</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <!-- Your edit form or input fields go here -->
+                                            <form method="POST" action="{{ route('create-XMLinscription') }}">
+                                                @csrf
+                                    
+                                            
+                                                <div class="form-group">
+                                                    <label for="CreatinscriptionUser">@lang('admin.user'):</label>
+                                                    <select id="CreatinscriptionUser" name="CreatinscriptionUser" class="form-control" required>
+                                                        @foreach($users as $user)
+                                                            <option value="{{ $user['id'] }}" >
+                                                                {{ $user['nom']}}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="CreatinscriptionOrder">@lang('admin.order'):</label>
+                                                    <input type="number" name="CreatinscriptionOrder" value="1" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="Creatinscriptionstatus">@lang('admin.status'):</label>
+                                                    <select id="Creatinscriptionstatus" name="Creatinscriptionstatus" class="form-control" required>
+                                                        <option value="Accepted" >
+                                                            Accepted
+                                                        </option>
+                                                        <option value="Declined" >
+                                                            Declined
+                                                        </option>
+                                                        <option value="In progress" >
+                                                            In Progress
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                <label for="CreatinscriptionLicence">@lang('admin.Licence'):</label>
+                                                <select id="CreatinscriptionLicence" name="CreatinscriptionLicence" class="form-control" required>
+                                                    @foreach($licences as $licence)
+                                                        <option value="{{ $licence->id }}" >
+                                                            {{ $licence->nom_licence }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            
+                                                <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
                         </div>
                         <div class="body">
                             <div class="table-responsive">
@@ -54,7 +121,7 @@
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="editModalLabel{{ $inscription->id }}">Edit inscription</h5>
+                                                                <h5 class="modal-title" id="editModalLabel{{ $inscription->id }}">@lang('admin.Edit-inscription-xml')</h5>
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
@@ -104,7 +171,7 @@
                                                                     </select>
                                                                 </div>
                                                                 
-                                                                    <button type="submit" class="btn btn-success btn-sm">Save Changes</button>
+                                                                    <button type="submit" class="btn btn-success btn-sm">@lang('admin.save-change')</button>
                                                                 </form>
                                                             </div>
                                                         </div>

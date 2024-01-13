@@ -144,9 +144,9 @@ class XMLController extends Controller
                     $newinscriptions->addAttribute('status', $request->input('editFieldStatus'));
                     $newinscriptions->addChild('order', $request->input('editFieldOrder'));
                     $this->xml->asXML($this->xmlFile);
-                    return redirect()->back()->with('success', 'Licence updated successfully');
+                    return redirect()->back()->with('success', 'inscription updated successfully');
                 } else {
-                    return redirect()->back()->with('error', 'Licence with id='.$id.' not found');
+                    return redirect()->back()->with('error', 'inscription with id='.$id.' not found');
                 }
             }
 
@@ -172,5 +172,41 @@ class XMLController extends Controller
                     return redirect()->back()->with('error', 'user with id='.$id.' not found');
                 }
             }
+            public function creatinscription(Request $request)
+                {
+                    $inscriptions = $this->xml->xpath("/university/inscriptions")[0];
+                    $newId = uniqid();
+                    $existingIds = $inscriptions->xpath("/university/inscriptions/inscription/id");
+                    while (in_array($newId, $existingIds)) {
+                        $newId = uniqid();
+                    }
+                    $newInscription = $inscriptions->addChild('inscription');
+                    $newInscription->addChild('id', $newId);
+                    $newInscription->addChild('user', $request->input('CreatinscriptionUser'));
+                    $newInscription->addChild('licence', $request->input('CreatinscriptionLicence'));
+                    $newInscription->addAttribute('status', $request->input('Creatinscriptionstatus'));
+                    $newInscription->addChild('order', $request->input('CreatinscriptionOrder'));
+                    $this->xml->asXML($this->xmlFile);
+
+                    return redirect()->back()->with('success', 'Inscription created successfully');
+                }
+                public function createLicence(Request $request)
+                {
+                 
+                    $licences = $this->xml->xpath("/university/licences")[0];
+                    $newId = uniqid();
+                    $existingIds = $licences->xpath("/university/licences/licence/id");
+                    
+                    while (in_array($newId, $existingIds)) {
+                        $newId = uniqid();
+                    }
+                    $newLicense = $licences->addChild('licence');
+                    $newLicense->addChild('id', $newId);
+                    $newLicense->addChild('departement', $request->input('CreatLicenceDepartement'));
+                    $newLicense->addChild('specialite', $request->input('CreatLicenceSpecialite'));
+                    $newLicense->addChild('nom_licence', $request->input('CreatLicenceName'));
+                    $this->xml->asXML($this->xmlFile);
+                    return redirect()->back()->with('success', 'Inscription created successfully');
+                }
 
 }

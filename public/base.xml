@@ -91,9 +91,8 @@
   <!-- Inscriptions -->
   <inscriptions>
     
-       
-  
-    <inscription status="Accepted"><id>2</id><user>5</user><licence>1</licence><order>4</order></inscription></inscriptions>
+    <inscription status="Accepted"><id>2</id><user>5</user><licence>1</licence><order>4</order></inscription>
+   <inscription status="Declined"><id>65a2777318591</id><user>7</user><licence>2</licence><order>1</order></inscription></inscriptions>
 
   <!-- Diplomes -->
   <diplomes>
@@ -361,10 +360,9 @@
   <licences>
   
    
-<licence><id>1</id><departement>1</departement><specialite>789</specialite><nom_licence>Computer Science</nom_licence>
-</licence>
+
 <licence><id>2</id><departement>2</departement><specialite>1</specialite><nom_licence>Computer devoloper</nom_licence></licence>
-</licences>
+<licence><id>65a27ae52f838</id><departement>3</departement><specialite>2</specialite><nom_licence>Dev ops</nom_licence></licence><licence><id>65a27afaeebf4</id><departement>6</departement><specialite>5</specialite><nom_licence>Dev ops</nom_licence></licence></licences>
 
  
 

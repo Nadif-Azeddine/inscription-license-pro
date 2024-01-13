@@ -55,5 +55,18 @@ return [
     "relv2"=> "Relevé de notes deuxième année" ,
     "bac"=> "baccalauréat",
     "diplome"=> "Diplôme",
+    "Male"=> "Mâle",
+    "Female"=> "Femelle",
+    "Deposit"=> "Déposé",
+    "Not-deposited"=> "non déposé",
+    "Edit-inscription"=> " Modifier l'inscription",
+    "Edit-candidate"=> " Modifier le candidat",
+    "Edit-candidate"=> "Modifier le candidat",
+    "Edit-Dossierinscription"=> "Modifier le dossier d'inscription",
+    "Edit-inscription-xml"=> "Modifier l'inscription XML",
+    "Edit-Licence"=> "Modifier la licence",
+    "Edit-Licence-xml"=> "Modifier la licence XML",
+    "Edit-user"=> "Modifier l'utilisateur",
+    "Edit-user-xml"=> "Modifier l'utilisateur XML",
     
 ];
