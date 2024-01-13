@@ -79,8 +79,8 @@
             <div class="user-info">
                 <div class="image"><a href="javascript:void(0);"><img src="../assets/images/user.png" alt="User"></a></div>
                 <div class="detail mt-3">
-                    <h5 class="mb-0">Mike Thomas</h5>
-                    <small>Admin</small>
+                    <h5 class="mb-0">@lang('admin.Admin')</h5>
+                    <small>@lang('admin.Admin')</small>
                 </div>
                 <div class="social">
                     <a href="javascript:void(0);" title="facebook"><i class="ti-twitter-alt"></i></a>
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <ul id="main-menu" class="metismenu">
-                <li class="g_heading">Main</li>
+                <li class="g_heading">@lang('admin.Main')</li>
                 <li><a href=""><i class="ti-home"></i><span>@lang('admin.Dashboard')</span></a></li>
                 <li class="g_heading">@lang('admin.TablesFromsElements')</li>
              

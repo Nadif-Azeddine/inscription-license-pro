@@ -13,6 +13,30 @@
       <email>john.doe@example.com</email>
       <date_naissance>2000-01-01T12:00:00</date_naissance>
     </user>
+        <user id="6" password="anotherpass" role="candidat" username="john" nom="john" prenom="doe">
+        <diplome>124</diplome>
+        <tel>987654321</tel>
+        <email>john.doe@example.com</email>
+        <date_naissance>1995-05-15T15:30:00</date_naissance>
+    </user>
+    <user id="7" password="thirdpass" role="candidat" username="alice" nom="alice" prenom="smith">
+        <diplome>125</diplome>
+        <tel>555555555</tel>
+        <email>alice.smith@example.com</email>
+        <date_naissance>1998-09-20T09:45:00</date_naissance>
+    </user>
+    <user id="8" password="newpass" role="candidat" username="emma" nom="emma" prenom="williams">
+        <diplome>126</diplome>
+        <tel>333333333</tel>
+        <email>emma.williams@example.com</email>
+        <date_naissance>1997-03-10T14:15:00</date_naissance>
+    </user>
+    <user id="9" password="lastpass" role="candidat" username="james" nom="james" prenom="miller">
+        <diplome>127</diplome>
+        <tel>111111111</tel>
+        <email>james.miller@example.com</email>
+        <date_naissance>1996-07-05T11:00:00</date_naissance>
+    </user>
          
     <!-- Add more user entries as needed -->
   <user id="1" username="doe1" nom="doe1" prenom="doe1"><tel>10101010</tel><email>john.doe@example.com1</email><date_naissance>2000-01-01T12:00:01</date_naissance></user></users>
@@ -28,6 +52,26 @@
       <id>2</id>
       <etablissement>456</etablissement>
       <departement_nom>Computer devops</departement_nom>
+    </department>
+    <department>
+        <id>3</id>
+        <etablissement>457</etablissement>
+        <departement_nom>Data Science</departement_nom>
+    </department>
+    <department>
+        <id>4</id>
+        <etablissement>458</etablissement>
+        <departement_nom>Network Security</departement_nom>
+    </department>
+    <department>
+        <id>5</id>
+        <etablissement>459</etablissement>
+        <departement_nom>Artificial Intelligence</departement_nom>
+    </department>
+    <department>
+        <id>6</id>
+        <etablissement>460</etablissement>
+        <departement_nom>Web Development</departement_nom>
     </department>
     <!-- Add more department entries as needed -->
   </departments>
@@ -61,20 +105,92 @@
       <nom_diplome>Bachelor's Degree</nom_diplome>
       <date_obt>2022-01-01T12:00:00</date_obt>
     </diplome>
+    <diplome>
+        <id>124</id>
+        <etablissement>457</etablissement>
+        <bacpd>790</bacpd>
+        <bac>988</bac>
+        <nom_diplome>Master's Degree</nom_diplome>
+        <date_obt>2022-02-15T14:30:00</date_obt>
+    </diplome>
+    <diplome>
+        <id>125</id>
+        <etablissement>458</etablissement>
+        <bacpd>791</bacpd>
+        <bac>989</bac>
+        <nom_diplome>Ph.D. in Computer Science</nom_diplome>
+        <date_obt>2022-03-20T10:45:00</date_obt>
+    </diplome>
+    <diplome>
+        <id>126</id>
+        <etablissement>459</etablissement>
+        <bacpd>792</bacpd>
+        <bac>990</bac>
+        <nom_diplome>Bachelor's in Information Technology</nom_diplome>
+        <date_obt>2022-04-10T09:15:00</date_obt>
+    </diplome>
+    <diplome>
+        <id>127</id>
+        <etablissement>460</etablissement>
+        <bacpd>793</bacpd>
+        <bac>991</bac>
+        <nom_diplome>Master's in Software Engineering</nom_diplome>
+        <date_obt>2022-05-05T11:30:00</date_obt>
+    </diplome>
     <!-- Add more diplome entries as needed -->
   </diplomes>
 
   <!-- Bacpds -->
   <bacpds>
+       <bacpd>
+        <id>789</id>
+        <typebpd>456</typebpd>
+        <Moy_s1>15</Moy_s1>
+        <Moy_s2>18</Moy_s2>
+        <Moy_s3>12</Moy_s3>
+        <Moy_s4>17</Moy_s4>
+        <Date_obt>2021-01-01</Date_obt>
+        <Mention>Excellent</Mention>
+    </bacpd>
     <bacpd>
-      <id>789</id>
-      <typebpd>456</typebpd>
-      <Moy_s1>80</Moy_s1>
-      <Moy_s2>85</Moy_s2>
-      <Moy_s3>75</Moy_s3>
-      <Moy_s4>90</Moy_s4>
-      <Date_obt>2021-01-01</Date_obt>
-      <Mention>Excellent</Mention>
+        <id>790</id>
+        <typebpd>457</typebpd>
+        <Moy_s1>12</Moy_s1>
+        <Moy_s2>14</Moy_s2>
+        <Moy_s3>11</Moy_s3>
+        <Moy_s4>16</Moy_s4>
+        <Date_obt>2021-02-15</Date_obt>
+        <Mention>Very Good</Mention>
+    </bacpd>
+    <bacpd>
+        <id>791</id>
+        <typebpd>458</typebpd>
+        <Moy_s1>18</Moy_s1>
+        <Moy_s2>16</Moy_s2>
+        <Moy_s3>15</Moy_s3>
+        <Moy_s4>14</Moy_s4>
+        <Date_obt>2021-03-20</Date_obt>
+        <Mention>Good</Mention>
+    </bacpd>
+    <bacpd>
+        <id>792</id>
+        <typebpd>459</typebpd>
+        <Moy_s1>17</Moy_s1>
+        <Moy_s2>19</Moy_s2>
+        <Moy_s3>13</Moy_s3>
+        <Moy_s4>18</Moy_s4>
+        <Date_obt>2021-04-10</Date_obt>
+        <Mention>Excellent</Mention>
+    </bacpd>
+    <bacpd>
+        <id>793</id>
+        <typebpd>460</typebpd>
+        <Moy_s1>11</Moy_s1>
+        <Moy_s2>15</Moy_s2>
+        <Moy_s3>14</Moy_s3>
+        <Moy_s4>12</Moy_s4>
+        <Date_obt>2021-05-05</Date_obt>
+        <Mention>Very Good</Mention>
     </bacpd>
     <!-- Add more bacpd entries as needed -->
   </bacpds>
@@ -82,23 +198,99 @@
   <!-- Bacs -->
   <bacs>
     <bac>
-      <id>987</id>
-      <bacoption>654</bacoption>
-      <Moy_national>82</Moy_national>
-      <Moy_regional>78</Moy_regional>
-      <Moy_general>80</Moy_general>
-      <Date_obt>2020-01-01</Date_obt>
-      <Mention>Good</Mention>
+        <id>987</id>
+        <bacoption>654</bacoption>
+        <Moy_national>15</Moy_national>
+        <Moy_regional>17</Moy_regional>
+        <Moy_general>16</Moy_general>
+        <Date_obt>2020-01-01</Date_obt>
+        <Mention>Good</Mention>
+    </bac>
+    <bac>
+        <id>988</id>
+        <bacoption>655</bacoption>
+        <Moy_national>12</Moy_national>
+        <Moy_regional>14</Moy_regional>
+        <Moy_general>13</Moy_general>
+        <Date_obt>2020-02-15</Date_obt>
+        <Mention>Excellent</Mention>
+    </bac>
+    <bac>
+        <id>989</id>
+        <bacoption>656</bacoption>
+        <Moy_national>18</Moy_national>
+        <Moy_regional>16</Moy_regional>
+        <Moy_general>17</Moy_general>
+        <Date_obt>2020-03-20</Date_obt>
+        <Mention>Very Good</Mention>
+    </bac>
+    <bac>
+        <id>990</id>
+        <bacoption>657</bacoption>
+        <Moy_national>11</Moy_national>
+        <Moy_regional>13</Moy_regional>
+        <Moy_general>12</Moy_general>
+        <Date_obt>2020-04-10</Date_obt>
+        <Mention>Excellent</Mention>
+    </bac>
+    <bac>
+        <id>991</id>
+        <bacoption>658</bacoption>
+        <Moy_national>16</Moy_national>
+        <Moy_regional>15</Moy_regional>
+        <Moy_general>14</Moy_general>
+        <Date_obt>2020-05-05</Date_obt>
+        <Mention>Good</Mention>
     </bac>
     <!-- Add more bac entries as needed -->
   </bacs>
 
   <!-- Typebpds -->
   <typebpds>
+       <typebpd>
+        <id>456</id>
+        <specialite>789</specialite>
+        <libelle>Computer Science</libelle>
+    </typebpd>
     <typebpd>
-      <id>456</id>
-      <specialite>789</specialite>
-      <libelle>Computer Science</libelle>
+        <id>457</id>
+        <specialite>1</specialite>
+        <libelle>Software Developer</libelle>
+    </typebpd>
+    <typebpd>
+        <id>458</id>
+        <specialite>2</specialite>
+        <libelle>Data Science</libelle>
+    </typebpd>
+    <typebpd>
+        <id>459</id>
+        <specialite>3</specialite>
+        <libelle>Network Security</libelle>
+    </typebpd>
+    <typebpd>
+        <id>460</id>
+        <specialite>4</specialite>
+        <libelle>Artificial Intelligence</libelle>
+    </typebpd>
+    <typebpd>
+        <id>461</id>
+        <specialite>5</specialite>
+        <libelle>Web Development</libelle>
+    </typebpd>
+    <typebpd>
+        <id>462</id>
+        <specialite>6</specialite>
+        <libelle>Mobile App Development</libelle>
+    </typebpd>
+    <typebpd>
+        <id>463</id>
+        <specialite>7</specialite>
+        <libelle>Database Management</libelle>
+    </typebpd>
+    <typebpd>
+        <id>464</id>
+        <specialite>8</specialite>
+        <libelle>Computer Graphics</libelle>
     </typebpd>
     <!-- Add more typebpd entries as needed -->
   </typebpds>
@@ -106,23 +298,65 @@
   <!-- Specialites -->
   <specialites>
     <specialite>
-      <id>789</id>
-      <libelle>Software Engineering</libelle>
+        <id>789</id>
+        <libelle>Software Engineering</libelle>
     </specialite>
     <specialite>
-      <id>1</id>
-      <libelle>Software devoloper</libelle>
+        <id>1</id>
+        <libelle>Software Developer</libelle>
     </specialite>
-    <!-- Add more specialite entries as needed -->
+    <specialite>
+        <id>2</id>
+        <libelle>Data Science</libelle>
+    </specialite>
+    <specialite>
+        <id>3</id>
+        <libelle>Network Security</libelle>
+    </specialite>
+    <specialite>
+        <id>4</id>
+        <libelle>Artificial Intelligence</libelle>
+    </specialite>
+    <specialite>
+        <id>5</id>
+        <libelle>Web Development</libelle>
+    </specialite>
+    <specialite>
+        <id>6</id>
+        <libelle>Mobile App Development</libelle>
+    </specialite>
+    <specialite>
+        <id>7</id>
+        <libelle>Database Management</libelle>
+    </specialite>
+    <specialite>
+        <id>8</id>
+        <libelle>Computer Graphics</libelle>
+    </specialite>
   </specialites>
 
   <!-- Bacoptions -->
   <bacoptions>
-    <bacoption>
-      <id>654</id>
-      <option>Physics</option>
+     <bacoption>
+        <id>654</id>
+        <option>Physics</option>
     </bacoption>
-    <!-- Add more bacoption entries as needed -->
+    <bacoption>
+        <id>655</id>
+        <option>Chemistry</option>
+    </bacoption>
+    <bacoption>
+        <id>656</id>
+        <option>Biology</option>
+    </bacoption>
+    <bacoption>
+        <id>657</id>
+        <option>Mathematics</option>
+    </bacoption>
+    <bacoption>
+        <id>658</id>
+        <option>Computer Science</option>
+    </bacoption>
   </bacoptions>
   <licences>
   
@@ -141,7 +375,156 @@
       <ville>789</ville>
       <nom_etablissement>University of Example</nom_etablissement>
     </establishment>
-    <!-- Add more establishment entries as needed -->
+    <establishment>
+        <id>1</id>
+        <ville>789</ville>
+        <nom_etablissement>Ecole Nationale de Commerce et de Gestion (ENCG) - Safi</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>2</id>
+        <ville>789</ville>
+        <nom_etablissement>Institut National des Postes et Télécommunications (INPT)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>3</id>
+        <ville>789</ville>
+        <nom_etablissement>Ecole Marocaine des Sciences de l'Ingénieur (EMSI)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>4</id>
+        <ville>789</ville>
+        <nom_etablissement>Institut des Hautes Etudes de Management (HEM)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>5</id>
+        <ville>Various cities</ville>
+        <nom_etablissement>Ecole Nationale des Sciences Appliquées (ENSA) - Present in different cities</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>6</id>
+        <ville>789</ville>
+        <nom_etablissement>Institut des Hautes Etudes de Management et d'Informatique (IGA)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>7</id>
+        <ville>789</ville>
+        <nom_etablissement>Ecole Supérieure des Industries du Textile et de l'Habillement (ESITH)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>8</id>
+        <ville>Safi</ville>
+        <nom_etablissement>Ecole Supérieure de Technologie (EST) - Safi</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>9</id>
+        <ville>Agadir</ville>
+        <nom_etablissement>Ecole Supérieure de Technologie (EST) - Agadir</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>10</id>
+        <ville>Al Hoceima</ville>
+        <nom_etablissement>Ecole Supérieure de Technologie (EST) - Al Hoceima</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>11</id>
+        <ville>Berrechid</ville>
+        <nom_etablissement>Ecole Supérieure de Technologie (EST) - Berrechid</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>12</id>
+        <ville>Casablanca</ville>
+        <nom_etablissement>Ecole Supérieure de Technologie (EST) - Casablanca</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>13</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Mohammed V de Rabat (UM5)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>14</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Hassan II de Casablanca (UH2C)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>15</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Cadi Ayyad (UCA)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>16</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Ibn Tofail (UIT)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>17</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Sidi Mohamed Ben Abdellah (USMBA)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>18</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Ibn Zohr (UIZ)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>19</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Moulay Ismail (UMI)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>20</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Abdelmalek Essaâdi (UAE)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>21</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Hassan Premier de Settat (UH1)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>22</id>
+        <ville>789</ville>
+        <nom_etablissement>Université Chouaib Doukkali (UCD)</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>23</id>
+        <ville>Safi</ville>
+        <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Safi</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>24</id>
+        <ville>Rabat</ville>
+        <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Rabat</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>25</id>
+        <ville>Tanger</ville>
+        <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Tanger</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>26</id>
+        <ville>Tétouan</ville>
+        <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Tétouan</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>27</id>
+        <ville>Safi</ville>
+        <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Safi</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>28</id>
+        <ville>Rabat</ville>
+        <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Rabat</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>29</id>
+        <ville>Tanger</ville>
+        <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Tanger</nom_etablissement>
+    </establishment>
+    <establishment>
+        <id>30</id>
+        <ville>Tétouan</ville>
+        <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Tétouan</nom_etablissement>
+    </establishment>
   </establishments>
 
 </university>
