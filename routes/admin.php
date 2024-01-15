@@ -7,6 +7,7 @@ use App\Http\Controllers\XMLController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\LicenceController;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\RoleAndPermissionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,5 +49,13 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'set-locale']],
     Route::put('/XMLinscriptions/{id}', [XMLController::class, 'editinscription'])->name('update-inscription');
     Route::post('/XMLinscriptions', [XMLController::class, 'creatinscription'])->name('create-XMLinscription');
     Route::post('/xmllicence', [XMLController::class, 'createLicence'])->name('create-XMLlicence');
+
+    // roles and permissions
+    Route::get('/roles', [RoleAndPermissionsController::class, 'indexRoles' ])->name('roles');
+    Route::put('/roles/{id}', [RoleAndPermissionsController::class, 'updaterole' ])->name('updaterole');
+    Route::delete('/roles/{id}', [RoleAndPermissionsController::class, 'deleterole' ])->name('deleterole');
+
+    Route::put('/permission/{id}', [RoleAndPermissionsController::class, 'updatepermission' ])->name('updatepermission');
+    Route::delete('/permission/{id}', [RoleAndPermissionsController::class, 'deletepermission' ])->name('deletepermission');
 });
 

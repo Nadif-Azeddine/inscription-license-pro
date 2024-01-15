@@ -10,7 +10,7 @@ class Role extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','description'];
+    protected $fillable = ['nom','description'];
 
     public function scopeSearch($query, $search)
     {

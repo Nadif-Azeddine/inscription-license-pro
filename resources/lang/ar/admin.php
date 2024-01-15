@@ -65,4 +65,7 @@ return [
     "Edit-Licence-xml"=> " XML تعديل الإجازة  بصيغة ",
     "Edit-user"=> "تعديل المستخدم ",
     "Edit-user-xml"=> "XML تعديل مستخدم بصيغة",
+    'role_per' => "الأدوار والصلاحيات",
+    "roles" => "الأدوار", 
+    "permissions" => "الصلاحيات"
 ];

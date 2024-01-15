@@ -65,5 +65,8 @@ return [
     "Edit-Licence-xml"=> "Edit license XML",
     "Edit-user"=> "Edit user",
     "Edit-user-xml"=> "Edit user XML",
+    'role_per' => "Roles and Permissions",
+    "roles" => "Roles", 
+    "premissions" => "Permissions"
     
 ];
