@@ -4,9 +4,7 @@
   <!-- Users -->
   <users>
     
-       
-     
-       
+    
      <user id="5" password="userpass" role="candidat" username="yahya" nom="yahya" prenom="yahya">
       <diplome>123</diplome>
       <tel>123456789</tel>
@@ -39,7 +37,8 @@
     </user>
          
     <!-- Add more user entries as needed -->
-  <user id="1" username="doe1" nom="doe1" prenom="doe1"><tel>10101010</tel><email>john.doe@example.com1</email><date_naissance>2000-01-01T12:00:01</date_naissance></user></users>
+  <user id="1" username="doe1" nom="doe1" prenom="doe1"><tel>10101010</tel><email>john.doe@example.com1</email><date_naissance>2000-01-01T12:00:01</date_naissance></user>
+  </users>
 
   <!-- Departments -->
   <departments>

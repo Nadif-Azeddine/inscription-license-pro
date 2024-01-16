@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use DOMDocument;
+use XSLTProcessor;
+use App\Models\User;
+use SimpleXMLElement;
 use App\Models\Licence;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use App\Models\User;
+use Illuminate\Support\Facades\View;
+
 class XMLController extends Controller
 {
      public $xmlFile;
     public $xml;
 
-    public function __construct()
-    {
-        $this->xmlFile = public_path('base.xml'); // Path to your XML file
-        $this->xml = simplexml_load_file($this->xmlFile);
-    }
+        public function __construct()
+        {
+            $this->xmlFile = public_path('base.xml'); // Path to your XML file
+            $this->xml = simplexml_load_file($this->xmlFile);
+        }
 
     public function listUsers()
     {
@@ -207,6 +212,28 @@ class XMLController extends Controller
                     $newLicense->addChild('nom_licence', $request->input('CreatLicenceName'));
                     $this->xml->asXML($this->xmlFile);
                     return redirect()->back()->with('success', 'Inscription created successfully');
+                }
+
+                public function showUsers()
+                {
+                    libxml_clear_errors();
+                
+                    // Ensure the XML file was loaded successfully in the constructor
+                    if ($this->xml !== false) {
+                        $xsl = new DOMDocument;
+                        $xslContent = file_get_contents(base_path('resources/views/admin/users.xslt'));
+                        $xsl->loadXML($xslContent);
+                
+                        $proc = new XSLTProcessor;
+                        $proc->importStyleSheet($xsl);
+                
+                        $html = $proc->transformToXML($this->xml);
+                
+                        return View::make('admin.listeUsersXSL')->with('html', $html);
+                    } else {
+                        // Log or handle errors
+                        error_log("XML file could not be loaded.");
+                    }
                 }
 
 }

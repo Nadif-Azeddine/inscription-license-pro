@@ -67,5 +67,6 @@ return [
     "Edit-user-xml"=> "XML تعديل مستخدم بصيغة",
     'role_per' => "الأدوار والصلاحيات",
     "roles" => "الأدوار", 
-    "permissions" => "الصلاحيات"
+    "permissions" => "الصلاحيات",
+    "listeUsersXSL" => "XML-XSL قائمة المستخدمين بصيغة ",
 ];

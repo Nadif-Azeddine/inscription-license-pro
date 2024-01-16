@@ -100,6 +100,7 @@
                             <li><a href="{{ route('XMLUsers') }}">@lang('admin.ListeXMLUsers')</a></li>
                             <li><a href="{{ route('inscriptions') }}">@lang('admin.Listeinscription')</a></li>
                             <li><a href="{{ route('XMLinscriptions') }}">@lang('admin.ListeXMLinscription')</a></li>
+                            <li><a href="{{ route('showUsers') }}">@lang('admin.listeUsersXSL')</a></li>
 
                         </ul>
                     </li>

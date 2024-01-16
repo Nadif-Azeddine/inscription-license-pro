@@ -70,6 +70,7 @@ return [
     "Edit-user-xml"=> "Modifier l'utilisateur XML",
     'role_per' => "Roles et Permissions",
     "roles" => "Roles", 
-    "permissions" => "Permissions"
+    "permissions" => "Permissions",
+    "listeUsersXSL" => "Liste des users XSL",
     
 ];
