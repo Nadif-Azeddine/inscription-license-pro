@@ -11,15 +11,14 @@
             <div class="col-md-8 mb-3 mt-2">
                 <div class="px-4 py-3 pb-5">
                     <div class="col-12 mb-3 mt-3 text-center d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="fw-bold text-dark">Informations Generale</h1>
-                        <p>Lorem ipsum dolor sit amet.</p>
+                        <h1 class="fw-bold text-dark">@lang('insciption.title')</h1>
                     </div>
                     <div class="d-flex blury-card flex-column justify-content-center align-items-center  ">
                         <form method="POST" class="col-12" action="{{ route('register') }}">
                             @csrf
                             <div class="row mb-3">
                                 <div class="col-6">
-                                    <label for="nom" class="col-form-label ">{{ __('Nom') }}</label>
+                                    <label for="nom" class="col-form-label ">@lang('insciption.nom')</label>
 
                                     <div class="col-12">
                                         <input id="nom" type="text" value="{{ Auth::user()->nom ?? old('nom') }}"
@@ -35,7 +34,7 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <label for="prenom" class="col-form-label ">{{ __('Prenom') }}</label>
+                                    <label for="prenom" class="col-form-label ">@lang('insciption.prenom')</label>
 
                                     <div class="col-12">
                                         <input id="prenom" type="text" value="{{ Auth::user()->prenom ?? old('prenom') }}"
@@ -53,7 +52,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <label for="date_naissance" class="col-form-label ">{{ __('Date Naissance') }}</label>
+                                    <label for="date_naissance" class="col-form-label ">@lang('insciption.date ')</label>
 
                                     <div class="col-12">
                                         <input id="date_naissance" type="date"
@@ -70,9 +69,9 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <label class="col-form-label">{{ __('Sexe') }}</label>
+                                    <label class="col-form-label">@lang('insciption.sexe')</label>
                                     <select class="form-select @error('sexe') is-invalid @enderror" name="sexe">
-                                        <option class="text-muted">{{ __('Sexe') }}</option>
+                                        <option class="text-muted">@lang('insciption.sexe')</option>
                                         <option value="H"
                                             {{ Auth::user() != null && Auth::user()->genre === 'H' ? 'selected' : '' }}>
                                             {{ __('Homme') }}</option>
@@ -90,7 +89,7 @@
 
                             <div class="mb-3 row">
                                 <div class="col-6">
-                                    <label for="email" class="col-form-label ">{{ __('Email Address') }}</label>
+                                    <label for="email" class="col-form-label ">@lang('insciption.email')</label>
                                     <div class="col-12">
                                         <input id="email" type="email" value="{{ Auth::user()->email ?? old('email') }}"
                                             class="form-control @error('email') is-invalid @enderror" name="email"
@@ -106,7 +105,7 @@
                                 </div>
 
                                 <div class="col-6">
-                                    <label for="tel" class="col-form-label ">{{ __('Telephone') }}</label>
+                                    <label for="tel" class="col-form-label ">@lang('insciption.telephone')</label>
                                     <div class="col-12">
                                         <input id="tel" type="tel" value="{{ Auth::user()->tel ?? old('tel') }}"
                                             class="form-control @error('tel') is-invalid @enderror" name="tel"
@@ -125,7 +124,7 @@
                             @guest
                                 <div class="row mb-3">
                                     <div class="col-6">
-                                        <label for="password" class=" col-form-label">{{ __('Password') }}</label>
+                                        <label for="password" class=" col-form-label">@lang('insciption.password')</label>
 
                                         <div class="col-12">
                                             <input id="password" value="{{ Auth::user()->password ?? '' }}" type="password"
@@ -143,7 +142,7 @@
 
                                     <div class="col-6">
                                         <label for="password_confirmation"
-                                            class=" col-form-label">{{ __('Confirm password') }}</label>
+                                            class=" col-form-label">@lang('insciption.confirm')</label>
                                         <div class="col-12">
                                             <input id="password" type="password" placeholder="Confirmer votre mot de passe"
                                                 class="form-control @error('password_confirmation') is-invalid @enderror"
@@ -161,7 +160,7 @@
 
                             <div class="col-12 mt-4">
                                 <button type="submit" class="btn rounded-pill py-3 btn-info col-12">
-                                    {{ __('Envoyer') }}
+                                    @lang('insciption.envoyer')
                                 </button>
                             </div>
                         </form>
@@ -177,11 +176,11 @@
                                 </div>
                                 <div class="modal-body py-4">
                                     <div class="mb-4">
-                                        <h6 class="fw-500">it seems that you already create an account, try to continue inscription instead</h6>
+                                        <h6 class="fw-500">it seems that you already create an account, try to continue insciption instead</h6>
                                     </div>
                                     <div class="row justify-content-around">
                                         <a href="{{ route('login') }}"
-                                            class="btn btn-primary rounded-pill col-8 text-white ">Continue Inscription</a>
+                                            class="btn btn-primary rounded-pill col-8 text-white ">Continue insciption</a>
                                     </div>
                                 </div>
                             </div>

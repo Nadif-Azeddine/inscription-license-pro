@@ -107,8 +107,11 @@
                     <li><a href="page-profile.html"><i class="ti-user"></i><span>@lang('admin.Profile')</span></a></li>
                     <li><a href="{{ route('Users') }}"><i class="ti-menu-alt"></i><span>@lang('admin.list-admins')</span></a>
                     </li>
+                    @can('ReadRole', App\Models\Role::class)
+                        
                     <li class="g_heading">@lang('admin.role_per')</li>
                         <li><a href="{{route('roles')}}"><i class="fa fa-shield"></i><span>@lang('admin.role_per')</span></a></li>
+                    @endcan
 
             </nav>
         </div>

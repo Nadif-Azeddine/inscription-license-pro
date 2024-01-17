@@ -133,10 +133,12 @@
                                                         {{ $role->description }}
                                                     </td>
                                                     <td>
-                                                        @foreach ($role->permissions as $permission)
-                                                            <span
-                                                                class="text-white bg-info p-1 px-2 rounded-pill m-2">{{ $permission->nom }}</span>
-                                                        @endforeach
+                                                        <div class="d-flex gap-2 flex-wrap">
+                                                            @foreach ($role->permissions as $permission)
+                                                                <span
+                                                                    class="text-white bg-info p-1 px-2 rounded-pill ">{{ $permission->nom }}</span>
+                                                            @endforeach
+                                                        </div>
                                                     </td>
                                                     <td>
 
