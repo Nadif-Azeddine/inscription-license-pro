@@ -20,21 +20,16 @@
       </head>
       <body>
          <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                       <th>departement</th>
                                             <th>nom</th>
-                                            <th>prenom</th>
-                                            <th>email</th>
-                                            <th>tel</th>  
-                                            <th>date_naissance</th>
-                                         
-                                         
+                                          
+                                            <th>specialite</th>                  
           <tbody>
-            <xsl:for-each select="//user">
+            <xsl:for-each select="//licence">
               <tr>
-                <td><xsl:value-of select="@username"/></td>
-                <td><xsl:value-of select="@nom"/> <xsl:value-of select="@prenom"/></td>
-                <td><xsl:value-of select="email"/></td>
-                  <td><xsl:value-of select="tel"/></td>
-                <td><xsl:value-of select="date_naissance"/></td>
+               <td><xsl:value-of select="////department[id = current()/departement]/departement_nom"/></td>
+        <td> <xsl:value-of select="////specialite[id = current()/specialite]/libelle"/></td>
+                <td><xsl:value-of select="nom_licence"/></td>
               </tr>
             </xsl:for-each>
           </tbody>

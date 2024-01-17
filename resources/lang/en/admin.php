@@ -68,6 +68,7 @@ return [
     'role_per' => "Roles and Permissions",
     "roles" => "Roles", 
     "premissions" => "Permissions",
-    "listeUsersXSL" => "List of XSL Users XSL",
+    "listeUsersXSL" => "List of XML Users XSL",
+    "listelicencexsl" => "List of XML licenses XSL",
     
 ];

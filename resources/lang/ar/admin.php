@@ -69,4 +69,5 @@ return [
     "roles" => "الأدوار", 
     "permissions" => "الصلاحيات",
     "listeUsersXSL" => "XML-XSL قائمة المستخدمين بصيغة ",
+    "listelicencexsl" => "XML-XSL قائمة الإجازة بصيغة ",
 ];

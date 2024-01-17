@@ -101,6 +101,7 @@
                             <li><a href="{{ route('inscriptions') }}">@lang('admin.Listeinscription')</a></li>
                             <li><a href="{{ route('XMLinscriptions') }}">@lang('admin.ListeXMLinscription')</a></li>
                             <li><a href="{{ route('showUsers') }}">@lang('admin.listeUsersXSL')</a></li>
+                            <li><a href="{{ route('showlICENCE') }}">@lang('admin.listelicencexsl')</a></li>
 
                         </ul>
                     </li>

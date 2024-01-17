@@ -72,5 +72,6 @@ return [
     "roles" => "Roles", 
     "permissions" => "Permissions",
     "listeUsersXSL" => "Liste des users XSL",
+    "listelicencexsl" => "Liste des licences XSL",
     
 ];

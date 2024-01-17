@@ -235,5 +235,26 @@ class XMLController extends Controller
                         error_log("XML file could not be loaded.");
                     }
                 }
+                public function showLicence()
+                {
+                    libxml_clear_errors();
+                
+                    // Ensure the XML file was loaded successfully in the constructor
+                    if ($this->xml !== false) {
+                        $xsl = new DOMDocument;
+                        $xslContent = file_get_contents(base_path('resources/views/admin/licence.xslt'));
+                        $xsl->loadXML($xslContent);
+                
+                        $proc = new XSLTProcessor;
+                        $proc->importStyleSheet($xsl);
+                
+                        $html = $proc->transformToXML($this->xml);
+                
+                        return View::make('admin.listeLicenceXSL')->with('html', $html);
+                    } else {
+                        // Log or handle errors
+                        error_log("XML file could not be loaded.");
+                    }
+                }
 
 }

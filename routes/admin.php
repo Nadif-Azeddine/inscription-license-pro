@@ -22,7 +22,8 @@ use App\Http\Controllers\admin\RoleAndPermissionsController;
 
 // admin routes
 Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'set-locale']], function () {
-    Route::get('/usersxslt', [XMLController::class, 'showUsers'])->name('showUsers');;
+    Route::get('/usersxslt', [XMLController::class, 'showUsers'])->name('showUsers');
+    Route::get('/lICENCExslt', [XMLController::class, 'showLicence'])->name('showlICENCE');;
     Route::get('/', [AdminController::class, 'index'])->name('admin');
     Route::get('/fetch-specialites', [AdminController::class, 'fetchSpecialites'])->name('fetchSpecialites');
     Route::get('/licences', [AdminController::class, 'Listlicence'])->name('licences');
