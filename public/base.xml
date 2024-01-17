@@ -90,8 +90,8 @@
   <!-- Inscriptions -->
   <inscriptions>
     
-    <inscription status="Accepted"><id>2</id><user>5</user><licence>1</licence><order>4</order></inscription>
-   <inscription status="Declined"><id>65a2777318591</id><user>7</user><licence>2</licence><order>1</order></inscription></inscriptions>
+    
+   <inscription status="Declined"><id>65a2777318591</id><user>7</user><licence>2</licence><order>1</order></inscription><inscription status="Accepted"><id>2</id><user>5</user><licence>65a27ae52f838</licence><order>4</order></inscription></inscriptions>
 
   <!-- Diplomes -->
   <diplomes>

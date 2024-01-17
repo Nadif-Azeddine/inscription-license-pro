@@ -4,14 +4,14 @@ namespace App\Policies;
 
 use App\Models\User;
 
-class CandidatPolicy
+class RolePolicy
 {
     /**
      * Create a new policy instance.
      */
     public function view(User $user): bool
     {
-        return $user->hasPermissionTo('ReadRole');
+        return $user->hasPermissionTo('readRole');
         
     }
 
@@ -20,7 +20,7 @@ class CandidatPolicy
      */
     public function create(User $user): bool
     {
-        return $user->hasPermissionTo('CreateRole');
+        return $user->hasPermissionTo('createRole');
         
     }
 
@@ -29,7 +29,7 @@ class CandidatPolicy
      */
     public function update(User $user): bool
     {
-        return $user->hasPermissionTo('UpdateRole');
+        return $user->hasPermissionTo('updateRole');
         
     }
 
@@ -38,7 +38,7 @@ class CandidatPolicy
      */
     public function delete(User $user): bool
     {
-        return $user->hasPermissionTo('DeleteRole');
+        return $user->hasPermissionTo('deleteRole');
         
     }
 }

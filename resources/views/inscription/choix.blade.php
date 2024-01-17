@@ -12,7 +12,6 @@
                 <div class="px-4 py-3 pb-5">
                     <div class="col-12 mb-3 mt-3 text-center d-flex flex-column justify-content-center align-items-center">
                         <h1 class="fw-bold text-dark">Votre Choix</h1>
-                        <p>Lorem ipsum dolor sit amet.</p>
                     </div>
                     <div class="d-flex blury-card flex-column justify-content-center align-items-center  ">
                         <form method="POST" class="col-12" action="{{ route('save-choix') }}">

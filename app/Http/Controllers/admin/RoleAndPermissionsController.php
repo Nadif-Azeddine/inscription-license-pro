@@ -11,7 +11,7 @@ class RoleAndPermissionsController extends Controller
 {
     public function indexRoles()
     {
-
+        $this->authorize('view', Role::class);
         $roles = Role::with('permissions')->get();
         $permissions = Permission::all();
         return view(
@@ -26,6 +26,7 @@ class RoleAndPermissionsController extends Controller
     public function updaterole(Request $request)
     {
         try {
+            $this->authorize('update', Role::class);
             $role = Role::where('id', $request->id_role)->first();
             $role->update([
                 'nom' => $request->nom_role,
@@ -41,8 +42,9 @@ class RoleAndPermissionsController extends Controller
 
     // delete role
     public function deleterole(Request $request)
-    {
+    {   
         try {
+            $this->authorize('delete', Role::class);
             $role = Role::where('id', $request->id_role)->first();
             $role->delete();
             return redirect()->back();
