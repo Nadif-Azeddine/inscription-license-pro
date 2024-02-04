@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Define complex types for elements -->
+  <xs:complexType name="userType">
+    <xs:sequence>
+      <xs:element name="diplome" type="xs:string"/>
+      <xs:element name="tel" type="xs:string"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="date_naissance" type="xs:dateTime"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:integer"/>
+    <xs:attribute name="password" type="xs:string"/>
+    <xs:attribute name="role" type="xs:string"/>
+    <xs:attribute name="username" type="xs:string"/>
+    <xs:attribute name="nom" type="xs:string"/>
+    <xs:attribute name="prenom" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="departmentType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="etablissement" type="xs:integer"/>
+      <xs:element name="departement_nom" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="filiereType">
+    <xs:sequence>
+      <xs:element name="department" type="xs:integer"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="matiereType">
+    <xs:attribute name="filiere" type="xs:string"/>
+    <xs:attribute name="id" type="xs:string"/>
+    <xs:attribute name="name" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="inscriptionType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="user" type="xs:integer"/>
+      <xs:element name="licence" type="xs:string"/>
+      <xs:element name="order" type="xs:integer"/>
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="diplomeType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="etablissement" type="xs:integer"/>
+      <xs:element name="bacpd" type="xs:integer"/>
+      <xs:element name="bac" type="xs:integer"/>
+      <xs:element name="nom_diplome" type="xs:string"/>
+      <xs:element name="date_obt" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bacpdType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="typebpd" type="xs:integer"/>
+      <xs:element name="Moy_s1" type="xs:integer"/>
+      <xs:element name="Moy_s2" type="xs:integer"/>
+      <xs:element name="Moy_s3" type="xs:integer"/>
+      <xs:element name="Moy_s4" type="xs:integer"/>
+      <xs:element name="Date_obt" type="xs:date"/>
+      <xs:element name="Mention" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bacType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="bacoption" type="xs:integer"/>
+      <xs:element name="Moy_national" type="xs:integer"/>
+      <xs:element name="Moy_regional" type="xs:integer"/>
+      <xs:element name="Moy_general" type="xs:integer"/>
+      <xs:element name="Date_obt" type="xs:date"/>
+      <xs:element name="Mention" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="typebpdType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="specialite" type="xs:integer"/>
+      <xs:element name="libelle" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="specialiteType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="libelle" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="bacoptionType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="option" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="licenceType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="departement" type="xs:integer"/>
+      <xs:element name="specialite" type="xs:integer"/>
+      <xs:element name="nom_licence" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="establishmentType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:integer"/>
+      <xs:element name="ville" type="xs:integer"/>
+      <xs:element name="nom_etablissement" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Define root element -->
+  <xs:element name="university">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="users" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="user" type="userType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="departments" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="department" type="departmentType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="filieres" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="filiere" type="filiereType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="matieres" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="matiere" type="matiereType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="inscriptions" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="inscription" type="inscriptionType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="diplomes" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="diplome" type="diplomeType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bacpds" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bacpd" type="bacpdType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bacs" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bac" type="bacType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="typebpds" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typebpd" type="typebpdType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="specialites" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="specialite" type="specialiteType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bacoptions" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bacoption" type="bacoptionType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="licences" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="licence" type="licenceType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="establishments" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="establishment" type="establishmentType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

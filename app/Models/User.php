@@ -69,7 +69,7 @@ class User extends Authenticatable
     }
 
     public function isCordinateur(){
-        return $this->cordinateur()->exists();
+        return $this->roles()->where('role_id', 4)->exists();
     }
 
     public function isAdmin(){

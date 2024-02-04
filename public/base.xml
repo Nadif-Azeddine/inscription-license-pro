@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="your_schema_location.xsd">
-
-  <!-- Users -->
+<university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="xml.xsd">
+  
   <users>
     
     
@@ -37,7 +36,7 @@
     </user>
          
     <!-- Add more user entries as needed -->
-  <user id="1" username="doe1" nom="doe1" prenom="doe1"><tel>10101010</tel><email>john.doe@example.com1</email><date_naissance>2000-01-01T12:00:01</date_naissance></user>
+
   </users>
 
   <!-- Departments -->
@@ -91,7 +90,7 @@
   <inscriptions>
     
     
-   <inscription status="Declined"><id>65a2777318591</id><user>7</user><licence>2</licence><order>1</order></inscription><inscription status="Accepted"><id>2</id><user>5</user><licence>65a27ae52f838</licence><order>4</order></inscription></inscriptions>
+   <inscription status="Declined"><id>65a2777318591</id><user>7</user><licence>2</licence><order>1</order></inscription><inscription status="Accepted"><id>2</id><user>5</user><licence>65a27ae52f838</licence><order>4</order></inscription><inscription status="Accepted"><id>65b84b8ca7b79</id><user>5</user><licence>2</licence><order>1</order></inscription></inscriptions>
 
   <!-- Diplomes -->
   <diplomes>
@@ -361,7 +360,7 @@
    
 
 <licence><id>2</id><departement>2</departement><specialite>1</specialite><nom_licence>Computer devoloper</nom_licence></licence>
-<licence><id>65a27ae52f838</id><departement>3</departement><specialite>2</specialite><nom_licence>Dev ops</nom_licence></licence><licence><id>65a27afaeebf4</id><departement>6</departement><specialite>5</specialite><nom_licence>Dev ops</nom_licence></licence></licences>
+<licence><id>65a27ae52f838</id><departement>3</departement><specialite>2</specialite><nom_licence>Dev ops</nom_licence></licence><licence><id>65a27afaeebf4</id><departement>6</departement><specialite>5</specialite><nom_licence>Dev ops</nom_licence></licence><licence><id>65a92ff08f7ba</id><departement>1</departement><specialite>789</specialite><nom_licence>computer science</nom_licence></licence></licences>
 
  
 
@@ -394,7 +393,7 @@
     </establishment>
     <establishment>
         <id>5</id>
-        <ville>Various cities</ville>
+        <ville>789</ville>
         <nom_etablissement>Ecole Nationale des Sciences Appliquées (ENSA) - Present in different cities</nom_etablissement>
     </establishment>
     <establishment>
@@ -409,27 +408,27 @@
     </establishment>
     <establishment>
         <id>8</id>
-        <ville>Safi</ville>
+        <ville>789</ville>
         <nom_etablissement>Ecole Supérieure de Technologie (EST) - Safi</nom_etablissement>
     </establishment>
     <establishment>
         <id>9</id>
-        <ville>Agadir</ville>
+        <ville>789</ville>
         <nom_etablissement>Ecole Supérieure de Technologie (EST) - Agadir</nom_etablissement>
     </establishment>
     <establishment>
         <id>10</id>
-        <ville>Al Hoceima</ville>
+        <ville>789</ville>
         <nom_etablissement>Ecole Supérieure de Technologie (EST) - Al Hoceima</nom_etablissement>
     </establishment>
     <establishment>
         <id>11</id>
-        <ville>Berrechid</ville>
+        <ville>789</ville>
         <nom_etablissement>Ecole Supérieure de Technologie (EST) - Berrechid</nom_etablissement>
     </establishment>
     <establishment>
         <id>12</id>
-        <ville>Casablanca</ville>
+        <ville>789</ville>
         <nom_etablissement>Ecole Supérieure de Technologie (EST) - Casablanca</nom_etablissement>
     </establishment>
     <establishment>
@@ -474,7 +473,9 @@
     </establishment>
     <establishment>
         <id>21</id>
-        <ville>789</ville>
+        <ville>
+            789
+        </ville>
         <nom_etablissement>Université Hassan Premier de Settat (UH1)</nom_etablissement>
     </establishment>
     <establishment>
@@ -484,42 +485,42 @@
     </establishment>
     <establishment>
         <id>23</id>
-        <ville>Safi</ville>
+        <ville>789</ville>
         <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Safi</nom_etablissement>
     </establishment>
     <establishment>
         <id>24</id>
-        <ville>Rabat</ville>
+        <ville>789</ville>
         <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Rabat</nom_etablissement>
     </establishment>
     <establishment>
         <id>25</id>
-        <ville>Tanger</ville>
+        <ville>789</ville>
         <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Tanger</nom_etablissement>
     </establishment>
     <establishment>
         <id>26</id>
-        <ville>Tétouan</ville>
+        <ville>789</ville>
         <nom_etablissement>Institut Spécialisé de Technologie Appliquée - Tétouan</nom_etablissement>
     </establishment>
     <establishment>
         <id>27</id>
-        <ville>Safi</ville>
+        <ville>789</ville>
         <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Safi</nom_etablissement>
     </establishment>
     <establishment>
         <id>28</id>
-        <ville>Rabat</ville>
+        <ville>789</ville>
         <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Rabat</nom_etablissement>
     </establishment>
     <establishment>
         <id>29</id>
-        <ville>Tanger</ville>
+        <ville>789</ville>
         <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Tanger</nom_etablissement>
     </establishment>
     <establishment>
         <id>30</id>
-        <ville>Tétouan</ville>
+        <ville>789</ville>
         <nom_etablissement>NTIC (Nouvelles Technologies de l'Information et de la Communication) - Tétouan</nom_etablissement>
     </establishment>
   </establishments>
